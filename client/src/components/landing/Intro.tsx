@@ -12,11 +12,10 @@ const VALUES = [
 
 export default function Intro() {
   return (
-    <section className="relative py-24 md:py-32 bg-[var(--ivory)] overflow-hidden">
-      <div
-        className="absolute inset-0 opacity-[0.04] pointer-events-none"
-        style={{ backgroundImage: `url(${ASSETS.pattern})`, backgroundSize: "420px" }}
-      />
+    <section className="relative py-24 md:py-32 bg-ivory-rich section-gold-edge overflow-hidden">
+      <div className="pattern-drift" style={{ backgroundImage: `url(${ASSETS.pattern})` }} />
+      <span className="deco-ring float-slow w-72 h-72 -top-24 -left-24 hidden md:block" />
+      <span className="deco-ring w-44 h-44 bottom-10 -right-16 hidden lg:block" style={{ animationDelay: "2s" }} />
       <div className="container relative">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
           <div className="reveal lg:col-span-7">

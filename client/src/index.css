@@ -181,6 +181,58 @@
     font-variant-numeric: tabular-nums;
     letter-spacing: 0.05em;
   }
+
+  /* ==== خلفيات غنية للأقسام الفاتحة (بديل الأبيض السادة) ==== */
+  /* عاجي مع توهج ذهبي ناعم من الزوايا */
+  .bg-ivory-rich {
+    background:
+      radial-gradient(1200px 500px at 90% -10%, oklch(0.9 0.045 88 / 55%), transparent 60%),
+      radial-gradient(900px 420px at -10% 110%, oklch(0.88 0.05 150 / 35%), transparent 60%),
+      linear-gradient(180deg, oklch(0.97 0.012 90), oklch(0.945 0.02 88));
+  }
+  /* رملي دافئ مع لمسة زمردية خفيفة */
+  .bg-sand-rich {
+    background:
+      radial-gradient(1000px 480px at 10% -10%, oklch(0.9 0.05 90 / 60%), transparent 55%),
+      radial-gradient(800px 400px at 110% 100%, oklch(0.87 0.045 160 / 30%), transparent 60%),
+      linear-gradient(180deg, oklch(0.94 0.022 88), oklch(0.915 0.028 87));
+  }
+  /* خط ذهبي متدرج يعلو الأقسام الفاتحة */
+  .section-gold-edge {
+    position: relative;
+  }
+  .section-gold-edge::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(560px, 70%);
+    height: 1px;
+    background: linear-gradient(90deg, transparent, oklch(0.72 0.09 85 / 70%), transparent);
+  }
+  /* زخرفة نمط عربي متحرك ببطء شديد */
+  .pattern-drift {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.05;
+    background-size: 420px;
+  }
+  /* هلال زخرفي كبير خافت في زاوية القسم */
+  .deco-ring {
+    position: absolute;
+    border-radius: 9999px;
+    border: 1px solid oklch(0.72 0.09 85 / 30%);
+    pointer-events: none;
+  }
+  .deco-ring::after {
+    content: "";
+    position: absolute;
+    inset: 22px;
+    border-radius: 9999px;
+    border: 1px solid oklch(0.72 0.09 85 / 18%);
+  }
 }
 
 /* Scroll reveal animations — calm, ≤ 600ms */
@@ -201,6 +253,49 @@
   }
   .img-hover-scale:hover img {
     transform: scale(1.04);
+  }
+
+  /* انجراف بطيء جدًا للنمط الزخرفي */
+  .pattern-drift {
+    animation: pattern-drift 60s linear infinite;
+  }
+  @keyframes pattern-drift {
+    from { background-position: 0 0; }
+    to { background-position: 420px 420px; }
+  }
+
+  /* طفو هادئ للعناصر الزخرفية */
+  .float-slow {
+    animation: float-slow 9s ease-in-out infinite;
+  }
+  @keyframes float-slow {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-14px); }
+  }
+
+  /* وميض ذهبي يعبر الفواصل */
+  .gold-shimmer {
+    background: linear-gradient(90deg, transparent, oklch(0.8 0.09 88 / 85%), transparent);
+    background-size: 200% 100%;
+    animation: gold-shimmer 5s ease-in-out infinite;
+  }
+  @keyframes gold-shimmer {
+    0%, 100% { background-position: 200% 0; }
+    50% { background-position: -200% 0; }
+  }
+
+  /* نبض هادئ لزر الواتساب العائم */
+  .wa-pulse::before {
+    content: "";
+    position: absolute;
+    inset: -6px;
+    border-radius: 9999px;
+    border: 1.5px solid oklch(0.72 0.09 85 / 45%);
+    animation: wa-pulse 2.8s cubic-bezier(0.23, 1, 0.32, 1) infinite;
+  }
+  @keyframes wa-pulse {
+    0% { transform: scale(0.9); opacity: 0.9; }
+    70%, 100% { transform: scale(1.35); opacity: 0; }
   }
 }
 @media (prefers-reduced-motion: reduce) {

@@ -39,6 +39,9 @@ export const ASSETS = {
   madinahNight: "/manus-storage/madinah-mosque-night_f5e3dd3e.jpg",
   madinahDay: "/manus-storage/madinah-mosque-day_97d84f40.jpg",
   makkahAerial: "/manus-storage/makkah-aerial_7bfa1b2c.jpg",
+  makkahHotelExterior: "/manus-storage/makkah-hotel-exterior_2c025aed.jpg",
+  makkahHotelTowers: "/manus-storage/makkah-hotel-towers-haram_0cb11e78.jpg",
+  makkahEconomyHotel: "/manus-storage/makkah-economy-hotel_3e7e7ed8.jpg",
 };
 
 export const NAV_LINKS = [
@@ -57,4 +60,3 @@ export function scrollToSection(id: string) {
     el.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 }
-

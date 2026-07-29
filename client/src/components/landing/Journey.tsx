@@ -1,6 +1,7 @@
 /**
  * Royal Serenity — رحلة الحجز: Timeline أنيقة من 4 خطوات تنتهي بواتساب
  */
+import { ASSETS } from "@/lib/brand";
 import SectionHeading from "./SectionHeading";
 import { waLink } from "@/lib/brand";
 import WhatsAppIcon from "./WhatsAppIcon";
@@ -14,8 +15,13 @@ const STEPS = [
 
 export default function Journey() {
   return (
-    <section id="booking" className="py-20 md:py-28 bg-[var(--ivory)]">
-      <div className="container">
+    <section id="booking" className="relative py-20 md:py-28 bg-ivory-rich section-gold-edge overflow-hidden">
+      <div
+        className="pattern-drift"
+        style={{ backgroundImage: `url(${ASSETS.pattern})`, animationDirection: "reverse" }}
+      />
+      <span className="deco-ring float-slow w-72 h-72 -bottom-28 -right-24 hidden md:block" />
+      <div className="container relative">
         <SectionHeading
           kicker="طريقة الحجز"
           title="أربع خطوات تفصلك عن الحرمين"

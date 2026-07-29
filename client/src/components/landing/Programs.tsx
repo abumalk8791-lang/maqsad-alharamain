@@ -5,7 +5,7 @@
 import { ASSETS, waLink } from "@/lib/brand";
 import WhatsAppIcon from "./WhatsAppIcon";
 import SectionHeading from "./SectionHeading";
-import { Clock, MapPin, Building2, Bus } from "lucide-react";
+import { Clock, MapPin, Building2, Bus, CalendarDays } from "lucide-react";
 
 interface Program {
   name: string;
@@ -14,6 +14,7 @@ interface Program {
   hotel: string;
   transport: string;
   price: string;
+  schedule?: string;
   badge?: string;
   image: string;
   alt: string;
@@ -26,7 +27,7 @@ const PROGRAMS: Program[] = [
     destination: "مكة المكرمة",
     hotel: "فندق قريب من الحرم",
     transport: "باص حديث مريح",
-    price: "يبدأ من — ريال",
+    price: "أسعار منافسة تناسب احتياجاتكم",
     image: ASSETS.makkahClockTower,
     alt: "برج الساعة والكعبة المشرفة في مكة المكرمة",
   },
@@ -36,18 +37,19 @@ const PROGRAMS: Program[] = [
     destination: "مكة والمدينة",
     hotel: "إقامة مختارة في المدينتين",
     transport: "نقل مريح بين المدن",
-    price: "يبدأ من — ريال",
+    price: "أسعار منافسة تناسب احتياجاتكم",
     badge: "الأكثر طلبًا",
     image: ASSETS.madinahEditorial,
     alt: "المسجد النبوي الشريف في المدينة المنورة وقت الغروب",
   },
   {
     name: "برنامج VIP الفاخر",
-    duration: "مرن حسب رغبتك",
-    destination: "مكة / المدينة",
+    duration: "3 أيام",
+    destination: "مكة المكرمة فقط",
     hotel: "فنادق بإطلالات مميزة",
     transport: "باص VIP بمقاعد فاخرة",
-    price: "حسب الطلب",
+    price: "أسعار منافسة تناسب احتياجاتكم",
+    schedule: "الاثنين → عودة الأربعاء • الخميس → عودة السبت",
     image: ASSETS.makkahAerial,
     alt: "منظر جوي للمسجد الحرام في مكة المكرمة",
   },
@@ -55,8 +57,13 @@ const PROGRAMS: Program[] = [
 
 export default function Programs() {
   return (
-    <section id="programs" className="py-20 md:py-28 bg-[var(--sand)]/40">
-      <div className="container">
+    <section id="programs" className="relative py-20 md:py-28 bg-sand-rich section-gold-edge overflow-hidden">
+      <div
+        className="pattern-drift"
+        style={{ backgroundImage: `url(${ASSETS.pattern})`, animationDirection: "reverse" }}
+      />
+      <span className="deco-ring float-slow w-64 h-64 -bottom-28 -left-20 hidden md:block" />
+      <div className="container relative">
         <SectionHeading
           kicker="برامجنا"
           title="برامج صُممت لراحتك"
@@ -96,10 +103,15 @@ export default function Programs() {
                   <li className="flex items-center gap-2.5">
                     <Bus className="w-4 h-4 text-[var(--gold)] shrink-0" /> {p.transport}
                   </li>
+                  {p.schedule && (
+                    <li className="flex items-center gap-2.5">
+                      <CalendarDays className="w-4 h-4 text-[var(--gold)] shrink-0" /> {p.schedule}
+                    </li>
+                  )}
                 </ul>
 
                 <div className="mt-6 pt-5 border-t border-white/10 flex items-center justify-between">
-                  <span className="text-[var(--gold-soft)] font-semibold text-sm">{p.price}</span>
+                  <span className="text-[var(--gold-soft)] font-semibold text-sm leading-relaxed">{p.price}</span>
                 </div>
 
                 <a

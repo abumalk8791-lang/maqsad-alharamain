@@ -12,8 +12,10 @@ const FEATURES = [
 
 export default function WhyUs() {
   return (
-    <section id="why-us" className="py-20 md:py-28 bg-[var(--sand)]/40">
-      <div className="container">
+    <section id="why-us" className="relative py-20 md:py-28 bg-sand-rich section-gold-edge overflow-hidden">
+      <span className="deco-ring float-slow w-96 h-96 -top-40 -left-40 hidden lg:block" />
+      <span className="deco-ring w-52 h-52 -bottom-20 -right-16 hidden md:block" style={{ animationDelay: "3s" }} />
+      <div className="container relative">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
           <div className="reveal lg:col-span-4">
             <span className="kicker">مميزاتنا</span>

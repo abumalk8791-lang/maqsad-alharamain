@@ -1,6 +1,7 @@
 /**
  * Royal Serenity — الأسئلة الشائعة: Accordion أنيقة
  */
+import { ASSETS } from "@/lib/brand";
 import SectionHeading from "./SectionHeading";
 import {
   Accordion,
@@ -39,8 +40,10 @@ const FAQS = [
 
 export default function FAQ() {
   return (
-    <section className="py-20 md:py-28 bg-[var(--ivory)]">
-      <div className="container max-w-3xl">
+    <section className="relative py-20 md:py-28 bg-sand-rich section-gold-edge overflow-hidden">
+      <div className="pattern-drift" style={{ backgroundImage: `url(${ASSETS.pattern})` }} />
+      <span className="deco-ring float-slow w-56 h-56 top-16 -left-24 hidden lg:block" />
+      <div className="container max-w-3xl relative">
         <SectionHeading kicker="استفساراتك" title="الأسئلة الشائعة" center />
 
         <div className="reveal">

@@ -11,9 +11,12 @@ export default function QuickBooking() {
   const [type, setType] = useState("عمرة");
   const [date, setDate] = useState("");
 
+  /** يعرض التاريخ بصيغة YYYY/MM/DD */
+  const formatDate = (iso: string) => (iso ? iso.replaceAll("-", "/") : "");
+
   const submit = () => {
     const msg = `السلام عليكم، أرغب في الاستفسار عن رحلة ${type} من الرياض إلى ${to}${
-      date ? ` بتاريخ ${date}` : ""
+      date ? ` بتاريخ ${formatDate(date)}` : ""
     } لدى مقصد الحرمين.`;
     window.open(waLink(msg), "_blank");
   };
@@ -51,13 +54,21 @@ export default function QuickBooking() {
             </div>
             <div>
               <label htmlFor="qb-date" className="block text-xs text-[var(--charcoal)]/60 mb-1 font-medium">التاريخ</label>
-              <input
-                id="qb-date"
-                type="date"
-                value={date}
-                onChange={(e) => setDate(e.target.value)}
-                className={selectCls}
-              />
+              <div className="relative">
+                <input
+                  id="qb-date"
+                  type="date"
+                  value={date}
+                  onChange={(e) => setDate(e.target.value)}
+                  className={`${selectCls} [&::-webkit-datetime-edit]:opacity-0 absolute inset-0 z-10`}
+                  aria-label="اختر تاريخ الرحلة"
+                />
+                <div className={`${selectCls} pointer-events-none min-h-[2.6rem] flex items-center`} dir="ltr">
+                  <span className={date ? "text-[var(--charcoal)]" : "text-[var(--charcoal)]/40"}>
+                    {date ? formatDate(date) : "YYYY/MM/DD"}
+                  </span>
+                </div>
+              </div>
             </div>
             <button
               onClick={submit}
@@ -72,4 +83,3 @@ export default function QuickBooking() {
     </section>
   );
 }
-

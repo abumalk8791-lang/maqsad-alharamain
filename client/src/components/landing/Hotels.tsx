@@ -26,12 +26,12 @@ const STAYS = [
     tall: false,
   },
   {
-    title: "أجنحة فندقية راقية",
+    title: "فنادق راقية قريبة من الحرم",
     city: "مكة المكرمة",
     category: "فئة فاخرة",
-    type: "أجنحة وغرف واسعة",
-    image: ASSETS.hotelLobbyLuxury,
-    alt: "لوبي فندق فاخر بتصميم راقٍ",
+    type: "غرف واسعة ومريحة",
+    image: ASSETS.makkahHotelExterior,
+    alt: "فندق راقٍ قريب من الحرم المكي",
     tall: false,
   },
   {
@@ -39,16 +39,18 @@ const STAYS = [
     city: "مكة / المدينة",
     category: "فئة اقتصادية",
     type: "غرف مشتركة وعائلية",
-    image: ASSETS.hotelLobbyArch,
-    alt: "لوبي فندق أنيق بعمارة إسلامية",
+    image: ASSETS.makkahEconomyHotel,
+    alt: "فندق اقتصادي قريب من الحرم في مكة المكرمة",
     tall: true,
   },
 ];
 
 export default function Hotels() {
   return (
-    <section id="hotels" className="py-20 md:py-28 bg-[var(--ivory)]">
-      <div className="container">
+    <section id="hotels" className="relative py-20 md:py-28 bg-ivory-rich section-gold-edge overflow-hidden">
+      <div className="pattern-drift" style={{ backgroundImage: `url(${ASSETS.pattern})` }} />
+      <span className="deco-ring float-slow w-80 h-80 -top-32 -right-28 hidden lg:block" />
+      <div className="container relative">
         <SectionHeading
           kicker="الإقامة"
           title="إقامة تليق برحلتك"
