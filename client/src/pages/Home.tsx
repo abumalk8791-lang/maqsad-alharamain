@@ -1,25 +1,47 @@
-import { Button } from "@/components/ui/button";
-import { Loader2 } from "lucide-react";
-import { Streamdown } from 'streamdown';
-
 /**
- * All content in this page are only for example, replace with your own feature implementation
- * When building pages, remember your instructions in Frontend Best Practices, Design Guide and Common Pitfalls
+ * مقصد الحرمين — ONE-PAGE Premium Landing Page (Royal Serenity)
+ * ترتيب الأقسام حسب المواصفات: Header → Hero → Quick Booking → Intro → Programs
+ * → Hotels → Transport → Experience → Why Us → Journey → Testimonials → FAQ → Final CTA → Footer
  */
+import Header from "@/components/landing/Header";
+import Hero from "@/components/landing/Hero";
+import QuickBooking from "@/components/landing/QuickBooking";
+import Intro from "@/components/landing/Intro";
+import Programs from "@/components/landing/Programs";
+import Hotels from "@/components/landing/Hotels";
+import Transport from "@/components/landing/Transport";
+import Experience from "@/components/landing/Experience";
+import WhyUs from "@/components/landing/WhyUs";
+import Journey from "@/components/landing/Journey";
+import Testimonials from "@/components/landing/Testimonials";
+import FAQ from "@/components/landing/FAQ";
+import FinalCta from "@/components/landing/FinalCta";
+import Footer from "@/components/landing/Footer";
+import FloatingWhatsApp from "@/components/landing/FloatingWhatsApp";
+import { useRevealOnScroll } from "@/hooks/useReveal";
+
 export default function Home() {
-  // If theme is switchable in App.tsx, we can implement theme toggling like this:
-  // const { theme, toggleTheme } = useTheme();
+  useRevealOnScroll();
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen bg-[var(--ivory)]">
+      <Header />
       <main>
-        {/* Example: lucide-react for icons */}
-        <Loader2 className="animate-spin" />
-        Example Page
-        {/* Example: Streamdown for markdown rendering */}
-        <Streamdown>Any **markdown** content</Streamdown>
-        <Button variant="default">Example Button</Button>
+        <Hero />
+        <QuickBooking />
+        <Intro />
+        <Programs />
+        <Hotels />
+        <Transport />
+        <Experience />
+        <WhyUs />
+        <Journey />
+        <Testimonials />
+        <FAQ />
+        <FinalCta />
       </main>
+      <Footer />
+      <FloatingWhatsApp />
     </div>
   );
 }
