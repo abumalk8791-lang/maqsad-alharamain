@@ -1,10 +1,51 @@
 /**
  * Royal Serenity — الفنادق: Editorial cards كبيرة على خلفية عاجية
  * بدون أسماء فنادق مخترعة — فئات إقامة قابلة للتعديل
+ * بطاقة "فنادق راقية قريبة من الحرم": عرض شرائح تلقائي (crossfade) لصور المستخدم
  */
-import { ASSETS, waLink } from "@/lib/brand";
+import { useEffect, useState } from "react";
+import { ASSETS, LUXURY_HOTEL_SLIDES, waLink } from "@/lib/brand";
 import SectionHeading from "./SectionHeading";
 import { MapPin, Star } from "lucide-react";
+
+/** عرض شرائح تلقائي هادئ يتقلب كل 3.5 ثانية مع تلاشي ناعم */
+function AutoSlideshow({ images, alt }: { images: string[]; alt: string }) {
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setCurrent((c) => (c + 1) % images.length);
+    }, 3500);
+    return () => clearInterval(id);
+  }, [images.length]);
+
+  return (
+    <div className="absolute inset-0">
+      {images.map((src, i) => (
+        <img
+          key={src}
+          src={src}
+          alt={`${alt} — صورة ${i + 1}`}
+          loading={i === 0 ? "eager" : "lazy"}
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${
+            i === current ? "opacity-100" : "opacity-0"
+          }`}
+        />
+      ))}
+      {/* مؤشرات صغيرة */}
+      <div className="absolute top-4 left-4 z-10 flex items-center gap-1.5" dir="ltr">
+        {images.map((_, i) => (
+          <span
+            key={i}
+            className={`rounded-full transition-all duration-500 ${
+              i === current ? "w-4 h-1.5 bg-[var(--gold-soft)]" : "w-1.5 h-1.5 bg-white/50"
+            }`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
 
 const STAYS = [
   {
@@ -32,6 +73,7 @@ const STAYS = [
     type: "غرف واسعة ومريحة",
     image: ASSETS.makkahHotelExterior,
     alt: "فندق راقٍ قريب من الحرم المكي",
+    slides: LUXURY_HOTEL_SLIDES,
     tall: false,
   },
   {
@@ -66,7 +108,11 @@ export default function Hotels() {
               }`}
               style={{ transitionDelay: `${(i % 2) * 80}ms` }}
             >
-              <img src={s.image} alt={s.alt} loading="lazy" className="w-full h-full object-cover" />
+              {"slides" in s && s.slides ? (
+                <AutoSlideshow images={s.slides} alt={s.alt} />
+              ) : (
+                <img src={s.image} alt={s.alt} loading="lazy" className="w-full h-full object-cover" />
+              )}
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
               <div className="absolute inset-x-0 bottom-0 p-6 md:p-8">
                 <div className="flex items-center gap-2 text-[var(--gold-soft)] text-xs font-semibold tracking-wider">

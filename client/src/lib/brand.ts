@@ -44,6 +44,23 @@ export const ASSETS = {
   makkahEconomyHotel: "/manus-storage/makkah-economy-hotel_3e7e7ed8.jpg",
 };
 
+/** صور المستخدم لبطاقة "فنادق راقية قريبة من الحرم" — عرض تلقائي */
+export const LUXURY_HOTEL_SLIDES = [
+  "/manus-storage/luxury-hotel-01_e265f059.webp",
+  "/manus-storage/luxury-hotel-02_254646b5.webp",
+  "/manus-storage/luxury-hotel-03_2d9697b1.webp",
+  "/manus-storage/luxury-hotel-04_310cd203.webp",
+  "/manus-storage/luxury-hotel-05_d29be0d9.webp",
+  "/manus-storage/luxury-hotel-06_aa5cb0b5.webp",
+  "/manus-storage/luxury-hotel-07_518a047d.webp",
+  "/manus-storage/luxury-hotel-08_07314ab4.webp",
+  "/manus-storage/luxury-hotel-09_07b3e654.webp",
+  "/manus-storage/luxury-hotel-10_cce86749.webp",
+  "/manus-storage/luxury-hotel-11_3c1bc745.webp",
+  "/manus-storage/luxury-hotel-12_7c94ed3d.webp",
+  "/manus-storage/luxury-hotel-13_9d10c713.webp",
+];
+
 export const NAV_LINKS = [
   { id: "hero", label: "الرئيسية" },
   { id: "programs", label: "البرامج" },
