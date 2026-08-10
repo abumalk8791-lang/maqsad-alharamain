@@ -1,6 +1,6 @@
 /**
- * Royal Serenity — النقل: أسطول باصات المدثر الأصلي
- * استخدام الصور المستخرجة مباشرة لضمان التطابق التام
+ * Royal Serenity — النقل: أسطول باصات المدثر الأصلي (النسخة المصححة)
+ * استخدام الصور المستخرجة مباشرة التي تعبر عن هوية العمرة والزيارة
  */
 import { ASSETS, waLink } from "@/lib/brand";
 import SectionHeading from "./SectionHeading";
@@ -8,9 +8,11 @@ import { CheckCircle2 } from "lucide-react";
 
 const FLEET = [
   { src: ASSETS.busExterior, label: "أسطول حديث" },
-  { src: ASSETS.busSeats, label: "مقاعد VIP" },
   { src: ASSETS.busVipInterior, label: "داخلية مريحة" },
-  { src: ASSETS.busVipSeats, label: "تجهيزات راقية" }
+  { src: ASSETS.busSeats, label: "باصات معتمدة" },
+  { src: ASSETS.busVipSeats, label: "تجهيزات راقية" },
+  { src: (ASSETS as any).busInt3, label: "راحة وأمان" },
+  { src: (ASSETS as any).busInt4, label: "خدمة متميزة" }
 ];
 
 export default function Transport() {
@@ -25,27 +27,25 @@ export default function Transport() {
         <SectionHeading
           kicker="معرض صور الباصات"
           title="أسطول حديث من الباصات المكيفة"
-          subtitle="أسطول حديث من الباصات المكيفة والمجهزة بأحدث التقنيات لضمان راحتكم."
+          subtitle="نحرص على توفير أحدث وسائل النقل المريحة والآمنة لخدمة ضيوف الرحمن طوال الرحلة."
           light
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
           {FLEET.map((item, i) => (
             <div 
               key={i} 
-              className={`reveal group relative rounded-2xl overflow-hidden shadow-2xl ${
-                i % 2 === 0 ? "h-64 md:h-80" : "h-64 md:h-72 lg:mt-12"
-              }`}
-              style={{ transitionDelay: `${i * 100}ms` }}
+              className="reveal group relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/3]"
+              style={{ transitionDelay: `${i * 80}ms` }}
             >
               <img 
                 src={item.src} 
                 alt={item.label} 
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-              <div className="absolute bottom-4 right-5">
-                <h3 className="text-white font-bold text-sm">{item.label}</h3>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute bottom-3 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <h3 className="text-white font-bold text-xs md:text-sm">{item.label}</h3>
               </div>
             </div>
           ))}
