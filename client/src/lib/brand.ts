@@ -36,14 +36,15 @@ import img_luxury_hotel_13_9d10c713 from "@/assets/luxury-hotel-13_9d10c713.webp
  */
 
 export const WHATSAPP_NUMBERS = {
-  primary: "966545247616",
-  secondary: "966562279674",
+  primary: "966541739626",
+  secondary: "0541739626",
 };
 
 export const PHONE_DISPLAY = {
-  primary: "0545247616",
-  secondary: "0562279674",
+  primary: "0541739626",
+  secondary: "0541739626",
 };
+
 
 export const WHATSAPP_MESSAGE =
   "السلام عليكم، أرغب في الاستفسار عن برامج العمرة المتاحة لدى مقصد الحرمين.";
