@@ -32,23 +32,24 @@ export default function Header() {
       }`}
     >
       <div className="container flex items-center justify-between h-20">
-        <button onClick={() => go("hero")} className="flex items-center gap-3" aria-label="مقصد الحرمين — الرئيسية">
+        <a href="#hero" onClick={(e) => { e.preventDefault(); go("hero"); }} className="flex items-center gap-3" aria-label="مقصد الحرمين — الرئيسية">
           <img src={ASSETS.logo} alt="شعار مقصد الحرمين" className="w-14 h-14 object-contain" />
           <span className="flex flex-col items-start leading-tight">
             <span className="text-[var(--ivory)] font-bold text-xl">مقصد الحرمين</span>
             <span className="text-[var(--gold)] text-[0.62rem] tracking-[0.35em] font-medium">MAQSAD ALHARAMAIN</span>
           </span>
-        </button>
+        </a>
 
         <nav className="hidden lg:flex items-center gap-7" aria-label="التنقل الرئيسي">
           {NAV_LINKS.map((l) => (
-            <button
+            <a
               key={l.id}
-              onClick={() => go(l.id)}
+              href={`#${l.id}`}
+              onClick={(e) => { e.preventDefault(); go(l.id); }}
               className="text-[var(--ivory)]/85 hover:text-[var(--gold)] text-sm font-medium transition-colors duration-200"
             >
               {l.label}
-            </button>
+            </a>
           ))}
         </nav>
 
@@ -77,13 +78,14 @@ export default function Header() {
         <div className="lg:hidden bg-[var(--emerald-deep)]/98 backdrop-blur-md border-t border-white/10 px-6 pb-6 pt-2">
           <nav className="flex flex-col" aria-label="قائمة الهاتف">
             {NAV_LINKS.map((l) => (
-              <button
+              <a
                 key={l.id}
-                onClick={() => go(l.id)}
+                href={`#${l.id}`}
+                onClick={(e) => { e.preventDefault(); go(l.id); }}
                 className="text-[var(--ivory)]/90 hover:text-[var(--gold)] text-base font-medium py-3.5 text-right border-b border-white/5 transition-colors"
               >
                 {l.label}
-              </button>
+              </a>
             ))}
           </nav>
           <a

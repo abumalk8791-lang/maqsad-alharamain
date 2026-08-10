@@ -28,12 +28,13 @@ export default function Footer() {
             <ul className="grid grid-cols-2 gap-x-6 gap-y-3">
               {NAV_LINKS.map((l) => (
                 <li key={l.id}>
-                  <button
-                    onClick={() => scrollToSection(l.id)}
+                  <a
+                    href={`#${l.id}`}
+                    onClick={(e) => { e.preventDefault(); scrollToSection(l.id); }}
                     className="text-white/65 hover:text-[var(--gold-soft)] text-sm transition-colors"
                   >
                     {l.label}
-                  </button>
+                  </a>
                 </li>
               ))}
             </ul>
