@@ -3,9 +3,8 @@ import { waLink } from "@/lib/brand";
 import WhatsAppIcon from "./WhatsAppIcon";
 import { Phone } from "lucide-react";
 
-const PHONE_DISPLAY = "0545247616";
-const PHONE_TEL = "+966545247616";
-
+const PHONE_DISPLAY = "0541739626";
+const PHONE_TEL = "+966541739626";
 export default function FloatingWhatsApp() {
   return (
     <div className="fixed bottom-5 left-5 z-50 flex flex-col items-start gap-3">
