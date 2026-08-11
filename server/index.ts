@@ -10,6 +10,16 @@ async function startServer() {
   const app = express();
   const server = createServer(app);
 
+  // Redirect trailing $ to clean URL (Fix for maqsadalhramein.com/$)
+  app.use((req, res, next) => {
+    if (req.path.endsWith('$')) {
+      const cleanPath = req.path.replace(/\$$/, '') || '/';
+      console.log(`Redirecting from ${req.path} to ${cleanPath}`);
+      return res.redirect(301, cleanPath);
+    }
+    next();
+  });
+
   // Serve static files from dist/public in production
   const staticPath =
     process.env.NODE_ENV === "production"
