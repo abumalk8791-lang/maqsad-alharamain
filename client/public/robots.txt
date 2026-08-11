@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://maqsad.manus.space/sitemap.xml
+Sitemap: https://www.maqsadalhramein.com/sitemap.xml
