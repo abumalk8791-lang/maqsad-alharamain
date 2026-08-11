@@ -1,15 +1,6 @@
 import img_maqsad_hero_makkah_72ae596d from "@/assets/maqsad-hero-makkah_72ae596d.jpg";
 import img_maqsad_madinah_editorial_ec93b473 from "@/assets/maqsad-madinah-editorial_ec93b473.jpg";
 import img_maqsad_final_cta_bec48089 from "@/assets/maqsad-final-cta_bec48089.jpg";
-import img_hotel_room_haram_view_f1808d7d from "@/assets/hotel-room-haram-view_f1808d7d.jpg";
-import img_hotel_lobby_luxury_443a5f02 from "@/assets/hotel-lobby-luxury_443a5f02.jpg";
-import img_hotel_lobby_arch_18932f4e from "@/assets/hotel-lobby-arch_18932f4e.jpg";
-import img_madinah_hotel_view_1b3ba901 from "@/assets/madinah-hotel-view_1b3ba901.jpg";
-import img_bus_exterior_luxury_6f632f97 from "@/assets/bus-exterior-luxury_6f632f97.jpg";
-import img_bus_vip_interior_9626d2c1 from "@/assets/bus-vip-interior_9626d2c1.jpg";
-import img_bus_seats_interior_24480a52 from "@/assets/bus-seats-interior_24480a52.jpg";
-import img_bus_vip_seats_e353a608 from "@/assets/bus-vip-seats_e353a608.jpg";
-import img_makkah_clocktower_kaaba_5ce8b89e from "@/assets/makkah-clocktower-kaaba_5ce8b89e.jpg";
 import img_madinah_mosque_night_f5e3dd3e from "@/assets/madinah-mosque-night_f5e3dd3e.jpg";
 import img_madinah_mosque_day_97d84f40 from "@/assets/madinah-mosque-day_97d84f40.jpg";
 import img_makkah_aerial_7bfa1b2c from "@/assets/makkah-aerial_7bfa1b2c.jpg";
@@ -32,7 +23,6 @@ import img_luxury_hotel_13_9d10c713 from "@/assets/luxury-hotel-13_9d10c713.webp
 
 /**
  * مقصد الحرمين — ثوابت الهوية والتواصل
- * Design: Royal Serenity — Deep Emerald + Champagne Gold + Warm Ivory
  */
 
 export const WHATSAPP_NUMBERS = {
@@ -53,21 +43,29 @@ export function waLink(customMessage?: string): string {
   return `https://wa.me/${WHATSAPP_NUMBERS.primary}?text=${msg}`;
 }
 
+// روابط الصور المباشرة من GitHub لضمان ظهورها 100%
+const GITHUB_RAW_BASE = "https://raw.githubusercontent.com/abumalk8791-lang/maqsad-alharamain/main/client/public/assets/final_images";
+
 export const ASSETS = {
   heroMakkah: img_maqsad_hero_makkah_72ae596d,
   logo: "/maqsad-logo_2fe7c87d.png",
   madinahEditorial: img_maqsad_madinah_editorial_ec93b473,
   finalCta: img_maqsad_final_cta_bec48089,
   pattern: "/maqsad-pattern_75e03940.png",
-  hotelRoomHaramView: "/assets/hotel_room_luxury.jpg",
-  hotelLobbyLuxury: "/assets/hotel_lobby_luxury.jpg",
-  hotelLobbyArch: "/assets/haram_view_prayer.jpg",
-  madinahHotelView: "/assets/makkah_clock_tower.jpg",
-  busExterior: "/assets/bus_mercedes_exterior.jpg",
-  busVipInterior: "/assets/bus_vip_interior.jpg",
-  busSeats: "/assets/bus_man_exterior.jpg",
-  busVipSeats: "/assets/bus_night_interior.jpg",
-  makkahClockTower: "/assets/makkah_clock_tower.jpg",
+  
+  // صور الفنادق النهائية (روابط مباشرة)
+  hotel1: `${GITHUB_RAW_BASE}/h1.jpg`,
+  hotel2: `${GITHUB_RAW_BASE}/h2.jpg`,
+  hotel3: `${GITHUB_RAW_BASE}/h3.jpg`,
+  
+  // صور الباصات النهائية (روابط مباشرة)
+  bus1: `${GITHUB_RAW_BASE}/b1.webp`,
+  bus2: `${GITHUB_RAW_BASE}/b2.webp`,
+  bus3: `${GITHUB_RAW_BASE}/b3.webp`,
+  bus4: `${GITHUB_RAW_BASE}/b4.webp`,
+  bus5: `${GITHUB_RAW_BASE}/b4.webp`, // تكرار مؤقت لضمان عدم وجود روابط تالفة
+  bus6: `${GITHUB_RAW_BASE}/b6.webp`,
+
   madinahNight: img_madinah_mosque_night_f5e3dd3e,
   madinahDay: img_madinah_mosque_day_97d84f40,
   makkahAerial: img_makkah_aerial_7bfa1b2c,
@@ -75,23 +73,6 @@ export const ASSETS = {
   makkahHotelTowers: img_makkah_hotel_towers_haram_0cb11e78,
   makkahEconomyHotel: img_makkah_economy_hotel_3e7e7ed8,
 };
-
-/** صور المستخدم لبطاقة "فنادق راقية قريبة من الحرم" — عرض تلقائي */
-export const LUXURY_HOTEL_SLIDES = [
-  img_luxury_hotel_01_e265f059,
-  img_luxury_hotel_02_254646b5,
-  img_luxury_hotel_03_2d9697b1,
-  img_luxury_hotel_04_310cd203,
-  img_luxury_hotel_05_d29be0d9,
-  img_luxury_hotel_06_aa5cb0b5,
-  img_luxury_hotel_07_518a047d,
-  img_luxury_hotel_08_07314ab4,
-  img_luxury_hotel_09_07b3e654,
-  img_luxury_hotel_10_cce86749,
-  img_luxury_hotel_11_3c1bc745,
-  img_luxury_hotel_12_7c94ed3d,
-  img_luxury_hotel_13_9d10c713,
-];
 
 export const NAV_LINKS = [
   { id: "hero", label: "الرئيسية" },
