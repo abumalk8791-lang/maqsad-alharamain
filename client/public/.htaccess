@@ -1,0 +1,14 @@
+# fix: remove trailing dollar sign redirect bug from htaccess
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Redirect requests ending with a literal $ to the main domain
+  RewriteCond %{REQUEST_URI} \$$
+  RewriteRule ^(.*)\$$ https://maqsadalhramein.com/ [R=301,L]
+
+  # Standard SPA redirect for Apache
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>
