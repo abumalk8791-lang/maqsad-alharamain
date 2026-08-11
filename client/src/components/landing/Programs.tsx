@@ -1,6 +1,5 @@
 /**
  * Royal Serenity — برامج العمرة: Premium cards بصور كبيرة وoverlay أنيق
- * الأسعار placeholder سهلة التعديل — لا أسعار حقيقية مخترعة
  */
 import { ASSETS, waLink } from "@/lib/brand";
 import WhatsAppIcon from "./WhatsAppIcon";
@@ -20,6 +19,7 @@ interface Program {
   alt: string;
 }
 
+// استخدام صور حقيقية ومباشرة من GitHub لضمان الظهور 100%
 const PROGRAMS: Program[] = [
   {
     name: "برنامج العمرة الميسّر",
@@ -28,8 +28,8 @@ const PROGRAMS: Program[] = [
     hotel: "فندق قريب من الحرم",
     transport: "باص حديث مريح",
     price: "أسعار منافسة تناسب احتياجاتكم",
-    image: ASSETS.makkahClockTower,
-    alt: "برج الساعة والكعبة المشرفة في مكة المكرمة",
+    image: ASSETS.hotel1, // استخدام صورة فندق حقيقية من "المدثر"
+    alt: "إطلالة على الحرم المكي الشريف",
   },
   {
     name: "برنامج العمرة والزيارة",
@@ -39,8 +39,8 @@ const PROGRAMS: Program[] = [
     transport: "نقل مريح بين المدن",
     price: "أسعار منافسة تناسب احتياجاتكم",
     badge: "الأكثر طلبًا",
-    image: ASSETS.madinahEditorial,
-    alt: "المسجد النبوي الشريف في المدينة المنورة وقت الغروب",
+    image: ASSETS.hotel2, // استخدام صورة فندق حقيقية من "المدثر"
+    alt: "إطلالة فندقية فاخرة في المدينة المنورة",
   },
   {
     name: "برنامج VIP الفاخر",
@@ -50,8 +50,8 @@ const PROGRAMS: Program[] = [
     transport: "باص VIP بمقاعد فاخرة",
     price: "أسعار منافسة تناسب احتياجاتكم",
     schedule: "الاثنين → عودة الأربعاء • الخميس → عودة السبت",
-    image: ASSETS.makkahAerial,
-    alt: "منظر جوي للمسجد الحرام في مكة المكرمة",
+    image: ASSETS.hotel3, // استخدام صورة فندق حقيقية من "المدثر"
+    alt: "غرفة فندقية فاخرة مطلة على الكعبة",
   },
 ];
 
