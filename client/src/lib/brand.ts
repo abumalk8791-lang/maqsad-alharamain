@@ -72,6 +72,7 @@ export const ASSETS = {
   makkahHotelExterior: img_makkah_hotel_exterior_2c025aed,
   makkahHotelTowers: img_makkah_hotel_towers_haram_0cb11e78,
   makkahEconomyHotel: img_makkah_economy_hotel_3e7e7ed8,
+  makkahClockTower: img_makkah_hotel_exterior_2c025aed, // إضافة بديلة للصورة المفقودة
 };
 
 export const NAV_LINKS = [
