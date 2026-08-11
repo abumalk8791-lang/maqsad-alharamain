@@ -1,18 +1,17 @@
 /**
- * Royal Serenity — النقل: أسطول باصات المدثر الأصلي (النسخة المصححة)
- * استخدام الصور المستخرجة مباشرة التي تعبر عن هوية العمرة والزيارة
+ * Royal Serenity — النقل: صور باصات حقيقية 100% (بدون جبال)
  */
 import { ASSETS, waLink } from "@/lib/brand";
 import SectionHeading from "./SectionHeading";
 import { CheckCircle2 } from "lucide-react";
 
 const FLEET = [
-  { src: ASSETS.busExterior, label: "أسطول حديث" },
-  { src: ASSETS.busVipInterior, label: "داخلية مريحة" },
-  { src: ASSETS.busSeats, label: "باصات معتمدة" },
-  { src: ASSETS.busVipSeats, label: "تجهيزات راقية" },
-  { src: (ASSETS as any).busInt3, label: "راحة وأمان" },
-  { src: (ASSETS as any).busInt4, label: "خدمة متميزة" }
+  { src: ASSETS.bus1, label: "أسطول حديث" },
+  { src: ASSETS.bus2, label: "داخلية مريحة" },
+  { src: ASSETS.bus3, label: "باصات معتمدة" },
+  { src: ASSETS.bus4, label: "تجهيزات راقية" },
+  { src: ASSETS.bus5, label: "راحة وأمان" },
+  { src: ASSETS.bus6, label: "خدمة متميزة" }
 ];
 
 export default function Transport() {
@@ -35,13 +34,14 @@ export default function Transport() {
           {FLEET.map((item, i) => (
             <div 
               key={i} 
-              className="reveal group relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/3]"
+              className="reveal group relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/3] bg-[var(--charcoal)]/20"
               style={{ transitionDelay: `${i * 80}ms` }}
             >
               <img 
                 src={item.src} 
                 alt={item.label} 
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                onError={(e) => (e.target as any).style.opacity = '0'}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <div className="absolute bottom-3 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">

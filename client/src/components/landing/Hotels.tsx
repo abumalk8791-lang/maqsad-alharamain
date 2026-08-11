@@ -1,6 +1,5 @@
 /**
- * Royal Serenity — الفنادق: استراتيجية عرض "المدثر" الأصلية
- * استخدام الصور والبيانات المستخرجة مباشرة لضمان التطابق
+ * Royal Serenity — الفنادق: صور حقيقية 100% من موقع المدثر
  */
 import { ASSETS, waLink } from "@/lib/brand";
 import SectionHeading from "./SectionHeading";
@@ -11,21 +10,21 @@ const HOTELS = [
     name: "فندق ضيافة الرجاء",
     location: "إبراهيم الخليل - مكة المكرمة",
     features: ["واي فاي مجاني", "مطعم فاخر", "توصيل للحرم"],
-    image: ASSETS.hotelLobbyArch,
+    image: ASSETS.hotel1,
     tag: "معتمد",
   },
   {
     name: "فندق فلسيطن",
     location: "شارع إبراهيم الخليل - مكة المكرمة",
     features: ["واي فاي مجاني", "مطعم فاخر", "توصيل للحرم"],
-    image: ASSETS.hotelRoomHaramView,
+    image: ASSETS.hotel2,
     tag: "معتمد",
   },
   {
     name: "فندق مكة ميلينيوم",
     location: "أبراج البيت – مكة المكرمة",
     features: ["واي فاي مجاني", "مطعم فاخر", "توصيل للحرم"],
-    image: ASSETS.hotelLobbyLuxury,
+    image: ASSETS.hotel3,
     tag: "معتمد",
   }
 ];
@@ -48,8 +47,13 @@ export default function Hotels() {
               className="reveal group bg-white rounded-3xl overflow-hidden shadow-[0_12px_40px_rgba(11,61,46,0.08)] border border-[var(--gold)]/10 transition-all duration-300 hover:-translate-y-2"
               style={{ transitionDelay: `${i * 100}ms` }}
             >
-              <div className="relative h-72 overflow-hidden">
-                <img src={h.image} alt={h.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+              <div className="relative h-72 overflow-hidden bg-[var(--charcoal)]/5">
+                <img 
+                  src={h.image} 
+                  alt={h.name} 
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
+                  onError={(e) => (e.target as any).style.opacity = '0'}
+                />
                 <div className="absolute top-4 right-4 bg-[var(--gold)] text-[var(--emerald-deep)] text-xs font-bold px-3 py-1.5 rounded-full shadow-lg flex items-center gap-1">
                   <Star className="w-3 h-3 fill-current" />
                   {h.tag}
