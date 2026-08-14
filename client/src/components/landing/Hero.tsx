@@ -24,7 +24,7 @@ export default function Hero() {
           <span className="text-[var(--gold-soft)]">سكن فندقي ونقل مريح</span>
         </h1>
         <p className="mt-6 text-lg md:text-2xl text-white/90 font-light max-w-3xl mx-auto leading-relaxed">
-          رحلة إيمانية متكاملة تنطلق من قلب الرياض إلى الحرمين، بترتيب هادئ يجمع الإقامة الفندقية والنقل المريح ليمنح عائلتك الخصوصية والراحة من البداية حتى العودة.
+          نرتب لكم رحلة العمرة من الرياض بصورة واضحة وبسيطة: حافلات مريحة، وإقامة فندقية مناسبة، ومتابعة تساعد عائلتكم على السفر بهدوء من وقت الانطلاق حتى العودة.
         </p>
 
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">

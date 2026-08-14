@@ -4,9 +4,9 @@
 import { ASSETS } from "@/lib/brand";
 
 const VALUES = [
-  { num: "٠١", title: "راحة عائلية", desc: "نرتب السكن والنقل لتعيش العائلة رحلتها بطمأنينة وخصوصية" },
-  { num: "٠٢", title: "تنظيم من الرياض", desc: "تفاصيل واضحة منذ نقطة التجمع في الرياض حتى العودة" },
-  { num: "٠٣", title: "ثقة ومتابعة", desc: "تواصل مباشر ومتابعة مستمرة في كل مراحل الرحلة البرية" },
+  { num: "٠١", title: "ترتيب يراعي العائلة", desc: "نساعدكم في ترتيب السكن والنقل لتبدأ الرحلة بهدوء وراحة." },
+  { num: "٠٢", title: "انطلاق واضح من الرياض", desc: "نعرفكم بتفاصيل التجمع والانطلاق مسبقاً، حتى تكون كل خطوة واضحة لكم." },
+  { num: "٠٣", title: "متابعة قريبة", desc: "يبقى فريقنا متاحاً عبر الواتساب للإجابة عن استفساراتكم قبل الرحلة وأثناءها." },
 ];
 
 export default function Intro() {
@@ -18,14 +18,14 @@ export default function Intro() {
       <div className="container relative">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
           <div className="reveal lg:col-span-7">
-            <span className="kicker">عمرة برية من الرياض</span>
+            <span className="kicker">رحلات عمرة برية من الرياض</span>
             <h2 className="mt-5 text-4xl md:text-6xl font-bold text-[var(--emerald-deep)] leading-[1.25]">
-              مقصدك إلى الحرمين...
+              إلى الحرمين...
               <br />
-              <span className="font-light text-[var(--charcoal)]/70">براحة عائلية وطمأنينة</span>
+              <span className="font-light text-[var(--charcoal)]/70">برحلة مرتبة وراحة مطمئنة</span>
             </h2>
             <p className="mt-8 text-lg md:text-xl text-[var(--charcoal)]/65 leading-loose max-w-xl font-light">
-              «نرتب رحلتكم البرية من الرياض، من الإقامة الفندقية القريبة من الحرم إلى الحافلات الحديثة، لتتفرغ العائلة لسكينة الرحلة وروحانيتها.»
+              «العمرة رحلة ينتظرها الإنسان بقلبه قبل أن يبدأ طريقه. لذلك نرتب لكم رحلة برية من الرياض تشمل الإقامة الفندقية والنقل بالحافلات، لتتفرغوا لما هو أهم: العبادة والطمأنينة وقضاء وقت هادئ مع العائلة.»
             </p>
           </div>
 
