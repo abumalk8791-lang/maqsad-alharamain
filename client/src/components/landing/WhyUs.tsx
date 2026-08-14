@@ -1,13 +1,23 @@
 /**
- * Royal Serenity — لماذا مقصد الحرمين: Premium grid بأرقام كبيرة أنيقة
+ * الخدمات الأساسية: إقامة فندقية ونقل بري حديث من الرياض
  */
-const FEATURES = [
-  { num: "01", title: "تنظيم احترافي", desc: "برامج مدروسة ومواعيد واضحة من البداية للنهاية" },
-  { num: "02", title: "إقامة مختارة بعناية", desc: "فئات إقامة متنوعة قريبة من الحرمين" },
-  { num: "03", title: "نقل مريح", desc: "وسائل نقل حديثة تناسب طبيعة رحلتك" },
-  { num: "04", title: "برامج مرنة", desc: "خيارات متعددة للمدة والوجهة تناسب ظروفك" },
-  { num: "05", title: "أسعار واضحة", desc: "تفاصيل كاملة قبل تأكيد الحجز بلا مفاجآت" },
-  { num: "06", title: "تواصل مباشر", desc: "فريقنا معك عبر واتساب قبل الرحلة وخلالها" },
+import { Building2, Bus, CheckCircle2 } from "lucide-react";
+
+const SERVICES = [
+  {
+    title: "إقامة فندقية مميزة",
+    description:
+      "نختار إقامة فندقية قريبة من الحرم وفي بيئة هادئة تمنح عائلتك الخصوصية والراحة، لتتفرغوا لأجواء العمرة والزيارة بطمأنينة.",
+    icon: Building2,
+    points: ["فنادق مختارة لقربها من الحرم", "إقامة تناسب راحة العائلة", "خصوصية وهدوء طوال فترة الإقامة"],
+  },
+  {
+    title: "نقل بري حديث وآمن",
+    description:
+      "تنطلق رحلاتنا البرية من الرياض بحافلات حديثة ومنظمة، لتستمتع العائلة برحلة طريق سلسة ومريحة نحو الحرمين والعودة.",
+    icon: Bus,
+    points: ["انطلاق من نقاط تجمع مريحة في الرياض", "رحلة برية منظمة ومتابعة مستمرة", "راحة وأمان لجميع أفراد العائلة"],
+  },
 ];
 
 export default function WhyUs() {
@@ -16,33 +26,36 @@ export default function WhyUs() {
       <span className="deco-ring float-slow w-96 h-96 -top-40 -left-40 hidden lg:block" />
       <span className="deco-ring w-52 h-52 -bottom-20 -right-16 hidden md:block" style={{ animationDelay: "3s" }} />
       <div className="container relative">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
-          <div className="reveal lg:col-span-4">
-            <span className="kicker">مميزاتنا</span>
-            <h2 className="mt-5 text-3xl md:text-5xl font-bold text-[var(--emerald-deep)] leading-[1.3] lg:sticky lg:top-28">
-              لماذا
-              <br />
-              مقصد الحرمين؟
-            </h2>
-          </div>
+        <div className="max-w-3xl mx-auto text-center reveal">
+          <span className="kicker justify-center">عمرة برية من الرياض</span>
+          <h2 className="mt-5 text-3xl md:text-5xl font-bold text-[var(--emerald-deep)] leading-[1.3]">خدماتنا لضمان راحتك</h2>
+          <p className="mt-5 text-[var(--charcoal)]/70 leading-relaxed md:text-lg">
+            نهتم بتفاصيل السكن والتنقل حتى تعيش عائلتك رحلة إيمانية مرتبة وهادئة من الرياض إلى الحرمين.
+          </p>
+        </div>
 
-          <div className="lg:col-span-8 divide-y divide-[var(--sand)]">
-            {FEATURES.map((f, i) => (
-              <div
-                key={f.num}
-                className="reveal group flex items-baseline gap-6 md:gap-10 py-6 md:py-7"
-                style={{ transitionDelay: `${(i % 3) * 70}ms` }}
-              >
-                <span className="big-num text-4xl md:text-6xl opacity-50 group-hover:opacity-90 transition-opacity duration-300 shrink-0 w-16 md:w-24">
-                  {f.num}
-                </span>
-                <div>
-                  <h3 className="text-xl md:text-2xl font-bold text-[var(--emerald-deep)]">{f.title}</h3>
-                  <p className="mt-1.5 text-sm md:text-base text-[var(--charcoal)]/60 leading-relaxed font-light">{f.desc}</p>
-                </div>
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
+          {SERVICES.map(({ title, description, icon: Icon, points }, index) => (
+            <article
+              key={title}
+              className="reveal rounded-3xl bg-white p-7 md:p-9 border border-[var(--gold)]/15 shadow-[0_12px_40px_rgba(11,61,46,0.08)]"
+              style={{ transitionDelay: `${index * 100}ms` }}
+            >
+              <div className="w-14 h-14 flex items-center justify-center rounded-2xl bg-[var(--emerald-deep)] text-[var(--gold-soft)]">
+                <Icon className="w-7 h-7" />
               </div>
-            ))}
-          </div>
+              <h3 className="mt-6 text-2xl font-bold text-[var(--emerald-deep)]">{title}</h3>
+              <p className="mt-3 text-[var(--charcoal)]/70 leading-relaxed">{description}</p>
+              <ul className="mt-6 space-y-3">
+                {points.map((point) => (
+                  <li key={point} className="flex items-start gap-2.5 text-sm text-[var(--charcoal)]/80">
+                    <CheckCircle2 className="w-5 h-5 text-[var(--gold)] shrink-0 mt-0.5" />
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))}
         </div>
       </div>
     </section>

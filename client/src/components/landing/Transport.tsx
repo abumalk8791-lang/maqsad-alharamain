@@ -1,17 +1,17 @@
 /**
- * Royal Serenity — النقل: صور باصات حقيقية 100% (بدون جبال)
+ * النقل البري: صور حافلات حقيقية لرحلات العمرة المنطلقة من الرياض
  */
 import { ASSETS, waLink } from "@/lib/brand";
 import SectionHeading from "./SectionHeading";
 import { CheckCircle2 } from "lucide-react";
 
 const FLEET = [
-  { src: ASSETS.bus1, label: "أسطول حديث" },
-  { src: ASSETS.bus2, label: "داخلية مريحة" },
-  { src: ASSETS.bus3, label: "باصات معتمدة" },
-  { src: ASSETS.bus4, label: "تجهيزات راقية" },
-  { src: ASSETS.bus5, label: "راحة وأمان" },
-  { src: ASSETS.bus6, label: "خدمة متميزة" }
+  { src: ASSETS.bus1, label: "حافلات حديثة من الرياض" },
+  { src: ASSETS.bus2, label: "رحلة طريق مريحة للعائلة" },
+  { src: ASSETS.bus3, label: "نقل بري منظم وآمن" },
+  { src: ASSETS.bus4, label: "راحة هادئة طوال الطريق" },
+  { src: ASSETS.bus5, label: "متابعة واهتمام بالتفاصيل" },
+  { src: ASSETS.bus6, label: "تنظيم موثوق للرحلة البرية" },
 ];
 
 export default function Transport() {
@@ -21,53 +21,54 @@ export default function Transport() {
         className="absolute inset-0 opacity-[0.05] pointer-events-none"
         style={{ backgroundImage: `url(${ASSETS.pattern})`, backgroundSize: "420px" }}
       />
-      
+
       <div className="container relative">
         <SectionHeading
-          kicker="معرض صور الباصات"
-          title="أسطول حديث من الباصات المكيفة"
-          subtitle="نحرص على توفير أحدث وسائل النقل المريحة والآمنة لخدمة ضيوف الرحمن طوال الرحلة."
+          kicker="النقل البري من الرياض"
+          title="حافلات حديثة لرحلة مريحة وآمنة"
+          subtitle="تنطلق رحلاتنا من الرياض بحافلات حديثة ومنظمة، لتصل العائلة إلى الحرمين براحة وطمأنينة في كل مرحلة من الرحلة."
           light
         />
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
           {FLEET.map((item, i) => (
-            <div 
-              key={i} 
+            <article
+              key={item.label}
               className="reveal group relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/3] bg-[var(--charcoal)]/20"
               style={{ transitionDelay: `${i * 80}ms` }}
             >
-              <img 
-                src={item.src} 
-                alt={item.label} 
+              <img
+                src={item.src}
+                alt={`${item.label} — مقصد الحرمين`}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                onError={(e) => (e.target as any).style.opacity = '0'}
+                loading="lazy"
+                onError={(event) => ((event.target as HTMLImageElement).style.opacity = "0")}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <div className="absolute bottom-3 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <h3 className="text-white font-bold text-xs md:text-sm">{item.label}</h3>
               </div>
-            </div>
+            </article>
           ))}
         </div>
 
         <div className="reveal mt-16 flex flex-wrap justify-center gap-x-12 gap-y-4">
-          {["رحلات منظمة", "وسائل نقل مريحة", "خيارات تناسب البرنامج", "متابعة وتواصل مباشر"].map((p) => (
-            <span key={p} className="flex items-center gap-2 text-[var(--ivory)]/85 text-sm md:text-base">
+          {["انطلاق من نقاط تجمع مريحة في الرياض", "حافلات حديثة لراحة العائلة", "رحلة برية منظمة ومتابعة مستمرة", "تواصل مباشر قبل الرحلة وخلالها"].map((point) => (
+            <span key={point} className="flex items-center gap-2 text-[var(--ivory)]/85 text-sm md:text-base">
               <CheckCircle2 className="w-5 h-5 text-[var(--gold)]" />
-              {p}
+              {point}
             </span>
           ))}
         </div>
 
         <div className="reveal mt-12 text-center">
           <a
-            href={waLink("السلام عليكم، أرغب في الاستفسار عن خدمات النقل المتاحة لدى مقصد الحرمين.")}
+            href={waLink("السلام عليكم، أرغب في الاستفسار عن النقل البري من الرياض ضمن رحلة العمرة لدى مقصد الحرمين.")}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 bg-[var(--gold)] text-[var(--emerald-deep)] px-10 py-4 rounded-full font-black text-lg transition-all hover:scale-105 hover:shadow-[0_0_25px_rgba(212,175,55,0.4)] active:scale-95"
           >
-            تواصل معنا الآن
+            استفسر عن النقل من الرياض
           </a>
         </div>
       </div>

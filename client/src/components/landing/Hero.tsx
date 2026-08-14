@@ -1,5 +1,5 @@
 /**
- * Royal Serenity — Hero سينمائي كامل الشاشة بصورة المسجد الحرام + overlay غامق
+ * الواجهة الرئيسية: عمرة برية من الرياض، إقامة فندقية ونقل عائلي مريح
  */
 import { ASSETS, scrollToSection, waLink } from "@/lib/brand";
 import WhatsAppIcon from "./WhatsAppIcon";
@@ -10,44 +10,45 @@ export default function Hero() {
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <img
         src={ASSETS.heroMakkah}
-        alt="المسجد الحرام في مكة المكرمة وقت الغروب"
+        alt="حافلات حديثة وفنادق قريبة من الحرم"
         className="absolute inset-0 w-full h-full object-cover"
+        fetchPriority="high"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-[var(--emerald-deep)]/90" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/45 to-[var(--emerald-deep)]/90" />
 
       <div className="relative z-10 container text-center pt-28 pb-40">
-        <p className="kicker justify-center !text-[var(--gold-soft)]">عمرة • زيارة • فنادق • نقل</p>
+        <p className="kicker justify-center !text-[var(--gold-soft)]">عمرة برية من الرياض • إقامة فندقية • نقل بالحافلات</p>
         <h1 className="mt-6 text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight [text-shadow:0_2px_24px_rgba(0,0,0,0.5)]">
-          رحلتك إلى الحرمين
+          حملات عمرة برية من الرياض
           <br />
-          <span className="text-[var(--gold-soft)]">تبدأ من هنا</span>
+          <span className="text-[var(--gold-soft)]">سكن فندقي ونقل مريح</span>
         </h1>
-        <p className="mt-6 text-lg md:text-2xl text-white/85 font-light max-w-2xl mx-auto">
-          نرتّب تفاصيل رحلتك، لتتفرغ أنت لسكينتها.
+        <p className="mt-6 text-lg md:text-2xl text-white/90 font-light max-w-3xl mx-auto leading-relaxed">
+          رحلة إيمانية متكاملة تنطلق من قلب الرياض إلى الحرمين، بترتيب هادئ يجمع الإقامة الفندقية والنقل المريح ليمنح عائلتك الخصوصية والراحة من البداية حتى العودة.
         </p>
 
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <button
-            onClick={() => scrollToSection("programs")}
-            className="w-full sm:w-auto px-8 py-4 rounded-full bg-[var(--gold)] text-[var(--emerald-deep)] font-bold text-lg transition-transform duration-200 hover:scale-[1.03] active:scale-95 shadow-[0_8px_32px_rgba(198,167,94,0.35)]"
-          >
-            استكشف برامجنا
-          </button>
           <a
-            href={waLink()}
+            href={waLink("السلام عليكم، أرغب في حجز رحلة عمرة برية من الرياض لدى مقصد الحرمين.")}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto px-8 py-4 rounded-full border border-white/40 text-white font-semibold text-lg backdrop-blur-sm bg-white/5 flex items-center justify-center gap-2 transition-all duration-200 hover:bg-white/15 active:scale-95"
+            className="w-full sm:w-auto px-8 py-4 rounded-full bg-[var(--gold)] text-[var(--emerald-deep)] font-bold text-lg transition-transform duration-200 hover:scale-[1.03] active:scale-95 shadow-[0_8px_32px_rgba(198,167,94,0.35)] inline-flex items-center justify-center gap-2"
           >
             <WhatsAppIcon className="w-5 h-5" />
-            تواصل معنا
+            احجز رحلتك عبر الواتساب الآن
           </a>
+          <button
+            onClick={() => scrollToSection("programs")}
+            className="w-full sm:w-auto px-8 py-4 rounded-full border border-white/40 text-white font-semibold text-lg backdrop-blur-sm bg-white/5 flex items-center justify-center gap-2 transition-all duration-200 hover:bg-white/15 active:scale-95"
+          >
+            استكشف البرامج
+          </button>
         </div>
       </div>
 
       <button
         onClick={() => scrollToSection("quick-booking")}
-        aria-label="انتقل للأسفل"
+        aria-label="انتقل إلى خيارات الحجز"
         className="absolute bottom-28 left-1/2 -translate-x-1/2 z-10 text-white/60 hover:text-white transition-colors animate-bounce"
       >
         <ChevronDown className="w-8 h-8" />

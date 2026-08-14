@@ -1,57 +1,43 @@
 /**
- * Royal Serenity — برامج العمرة: Premium cards بصور كبيرة وoverlay أنيق
+ * مقارنة البرامج: عمرة برية من الرياض مع إقامة فندقية ونقل عائلي
  */
 import { ASSETS, waLink } from "@/lib/brand";
 import WhatsAppIcon from "./WhatsAppIcon";
 import SectionHeading from "./SectionHeading";
-import { Clock, MapPin, Building2, Bus, CalendarDays } from "lucide-react";
+import { Building2, Bus, MapPin, ShieldCheck } from "lucide-react";
 
 interface Program {
   name: string;
-  duration: string;
-  destination: string;
-  hotel: string;
-  transport: string;
-  price: string;
-  schedule?: string;
   badge?: string;
   image: string;
   alt: string;
+  summary: string;
+  features: Array<{ icon: typeof Bus; text: string }>;
 }
 
-// استخدام صور حقيقية ومباشرة من GitHub لضمان الظهور 100%
 const PROGRAMS: Program[] = [
   {
-    name: "برنامج العمرة الميسّر",
-    duration: "3 أيام",
-    destination: "مكة المكرمة",
-    hotel: "فندق قريب من الحرم",
-    transport: "باص حديث مريح",
-    price: "أسعار منافسة تناسب احتياجاتكم",
-    image: ASSETS.hotel1, // استخدام صورة فندق حقيقية من "المدثر"
-    alt: "إطلالة على الحرم المكي الشريف",
+    name: "البرنامج الاقتصادي",
+    image: ASSETS.hotel1,
+    alt: "إقامة فندقية مريحة قريبة من الحرم لبرنامج العمرة البري من الرياض",
+    summary: "خيار عملي يجمع رحلة برية منظمة من الرياض وإقامة فندقية مختارة بعناية، مع الحفاظ على راحة العائلة ضمن قيمة مناسبة.",
+    features: [
+      { icon: Bus, text: "نقل مريح بالحافلات الحديثة من الرياض" },
+      { icon: Building2, text: "إقامة فندقية بجودة موثوقة" },
+      { icon: ShieldCheck, text: "تنظيم هادئ يراعي راحة العائلة" },
+    ],
   },
   {
-    name: "برنامج العمرة والزيارة",
-    duration: "5 أيام",
-    destination: "مكة والمدينة",
-    hotel: "إقامة مختارة في المدينتين",
-    transport: "نقل مريح بين المدن",
-    price: "أسعار منافسة تناسب احتياجاتكم",
-    badge: "الأكثر طلبًا",
-    image: ASSETS.hotel2, // استخدام صورة فندق حقيقية من "المدثر"
-    alt: "إطلالة فندقية فاخرة في المدينة المنورة",
-  },
-  {
-    name: "برنامج VIP الفاخر",
-    duration: "3 أيام",
-    destination: "مكة المكرمة فقط",
-    hotel: "فنادق بإطلالات مميزة",
-    transport: "باص VIP بمقاعد فاخرة",
-    price: "أسعار منافسة تناسب احتياجاتكم",
-    schedule: "الاثنين → عودة الأربعاء • الخميس → عودة السبت",
-    image: ASSETS.hotel3, // استخدام صورة فندق حقيقية من "المدثر"
-    alt: "غرفة فندقية فاخرة مطلة على الكعبة",
+    name: "برنامج VIP",
+    badge: "راحة وخصوصية أعلى",
+    image: ASSETS.hotel3,
+    alt: "فندق قريب من الحرم لبرنامج العمرة البري VIP من الرياض",
+    summary: "تجربة أكثر خصوصية لعائلتك، مع حافلات بمقاعد مميزة وإقامة فندقية فاخرة قريبة من الحرم لتعيشوا الرحلة بطمأنينة.",
+    features: [
+      { icon: Bus, text: "حافلات VIP بمقاعد فاخرة ومريحة" },
+      { icon: MapPin, text: "إقامة فندقية فاخرة على بُعد خطوات من الحرم" },
+      { icon: ShieldCheck, text: "أقصى درجات الخصوصية والراحة العائلية" },
+    ],
   },
 ];
 
@@ -65,71 +51,57 @@ export default function Programs() {
       <span className="deco-ring float-slow w-64 h-64 -bottom-28 -left-20 hidden md:block" />
       <div className="container relative">
         <SectionHeading
-          kicker="برامجنا"
-          title="برامج صُممت لراحتك"
-          subtitle="اختر البرنامج الذي يناسب رحلتك، ودع التفاصيل علينا."
+          kicker="برامج العمرة البرية من الرياض"
+          title="اختر البرنامج المناسب لعائلتك"
+          subtitle="نساعدك على اختيار مستوى الإقامة والنقل الذي يناسب رحلتكم، مع ترتيب واضح واهتمام دائم براحتكم."
           center
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-          {PROGRAMS.map((p, i) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
+          {PROGRAMS.map((program, i) => (
             <article
-              key={p.name}
+              key={program.name}
               className="reveal group img-hover-scale relative rounded-3xl overflow-hidden bg-[var(--emerald-deep)] shadow-[0_16px_48px_rgba(11,61,46,0.15)] flex flex-col"
-              style={{ transitionDelay: `${i * 80}ms` }}
+              style={{ transitionDelay: `${i * 100}ms` }}
             >
               <div className="relative h-64 overflow-hidden">
-                <img src={p.image} alt={p.alt} loading="lazy" className="w-full h-full object-cover" />
+                <img src={program.image} alt={program.alt} loading="lazy" className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[var(--emerald-deep)] via-transparent to-transparent" />
-                {p.badge && (
+                {program.badge && (
                   <span className="absolute top-4 right-4 px-4 py-1.5 rounded-full bg-[var(--gold)] text-[var(--emerald-deep)] text-xs font-bold shadow-lg">
-                    {p.badge}
+                    {program.badge}
                   </span>
                 )}
               </div>
 
               <div className="flex flex-col flex-1 p-6 md:p-7 -mt-6 relative">
-                <h3 className="text-xl md:text-2xl font-bold text-white">{p.name}</h3>
-                <ul className="mt-5 space-y-2.5 text-sm text-white/75">
-                  <li className="flex items-center gap-2.5">
-                    <Clock className="w-4 h-4 text-[var(--gold)] shrink-0" /> {p.duration}
-                  </li>
-                  <li className="flex items-center gap-2.5">
-                    <MapPin className="w-4 h-4 text-[var(--gold)] shrink-0" /> {p.destination}
-                  </li>
-                  <li className="flex items-center gap-2.5">
-                    <Building2 className="w-4 h-4 text-[var(--gold)] shrink-0" /> {p.hotel}
-                  </li>
-                  <li className="flex items-center gap-2.5">
-                    <Bus className="w-4 h-4 text-[var(--gold)] shrink-0" /> {p.transport}
-                  </li>
-                  {p.schedule && (
-                    <li className="flex items-center gap-2.5">
-                      <CalendarDays className="w-4 h-4 text-[var(--gold)] shrink-0" /> {p.schedule}
+                <h3 className="text-2xl md:text-3xl font-bold text-white">{program.name}</h3>
+                <p className="mt-3 text-sm md:text-base text-white/80 leading-relaxed">{program.summary}</p>
+                <ul className="mt-6 space-y-3 text-sm md:text-base text-white/80">
+                  {program.features.map(({ icon: Icon, text }) => (
+                    <li key={text} className="flex items-start gap-2.5">
+                      <Icon className="w-5 h-5 text-[var(--gold)] shrink-0 mt-0.5" />
+                      <span>{text}</span>
                     </li>
-                  )}
+                  ))}
                 </ul>
 
-                <div className="mt-6 pt-5 border-t border-white/10 flex items-center justify-between">
-                  <span className="text-[var(--gold-soft)] font-semibold text-sm leading-relaxed">{p.price}</span>
-                </div>
-
                 <a
-                  href={waLink(`السلام عليكم، أرغب في الاستفسار عن ${p.name} (${p.duration} — ${p.destination}) لدى مقصد الحرمين.`)}
+                  href={waLink(`السلام عليكم، أرغب في الاستفسار عن ${program.name} للعمرة البرية من الرياض لدى مقصد الحرمين.`)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-4 flex items-center justify-center gap-2 w-full py-3 rounded-full bg-[var(--gold)] text-[var(--emerald-deep)] font-bold text-sm transition-transform duration-200 hover:scale-[1.02] active:scale-95"
+                  className="mt-7 flex items-center justify-center gap-2 w-full py-3.5 rounded-full bg-[var(--gold)] text-[var(--emerald-deep)] font-bold text-sm transition-transform duration-200 hover:scale-[1.02] active:scale-95"
                 >
                   <WhatsAppIcon className="w-4 h-4" />
-                  احجز الآن
+                  استفسر واحجز عبر الواتساب
                 </a>
               </div>
             </article>
           ))}
         </div>
 
-        <p className="reveal mt-8 text-center text-sm text-[var(--charcoal)]/50">
-          الأسعار والتفاصيل النهائية تُؤكد عند التواصل — تواصل معنا عبر واتساب لمعرفة أحدث العروض والمواعيد.
+        <p className="reveal mt-8 text-center text-sm text-[var(--charcoal)]/60">
+          تفاصيل البرنامج والمواعيد والسعر النهائي تُؤكد عند التواصل عبر واتساب.
         </p>
       </div>
     </section>

@@ -1,5 +1,5 @@
 /**
- * Royal Serenity — الأسئلة الشائعة: Accordion أنيقة
+ * الأسئلة الشائعة: محتوى متوافق مع FAQ Schema وعمرة برية من الرياض
  */
 import { ASSETS } from "@/lib/brand";
 import SectionHeading from "./SectionHeading";
@@ -9,57 +9,50 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { PHONE_DISPLAY } from "@/lib/brand";
 
 const FAQS = [
   {
-    q: "هل الرحلات متاحة من الرياض؟",
-    a: "نعم، برامجنا تنطلق من الرياض إلى مكة المكرمة والمدينة المنورة. تواصل معنا عبر واتساب لمعرفة أقرب موعد انطلاق متاح.",
+    q: "من أين تنطلق رحلاتنا؟",
+    a: "جميع رحلاتنا البرية تنطلق من نقاط تجمع مريحة في مدينة الرياض، ثم تتجه إلى مكة المكرمة أو المدينة المنورة بحسب البرنامج المختار.",
   },
   {
-    q: "ما البرامج المتاحة؟",
-    a: "نوفر برامج عمرة وزيارة متنوعة تشمل الإقامة والنقل، بمدد وفئات مختلفة تناسب الأفراد والعائلات. تفاصيل كل برنامج ومواعيده تُؤكد عند التواصل.",
+    q: "هل برامجكم تناسب العائلات؟",
+    a: "بكل تأكيد، نحن نركز على توفير أقصى درجات الراحة العائلية في السكن والتنقل، مع خيارات إقامة تهتم بالخصوصية وبيئة مريحة لجميع أفراد العائلة.",
   },
   {
-    q: "هل يوجد سكن في مكة والمدينة؟",
-    a: "نعم، برامجنا تشمل إقامة مختارة بعناية في مكة المكرمة، مع خيار إضافة الإقامة في المدينة المنورة حسب البرنامج الذي تختاره.",
+    q: "هل توفرون حجوزات طيران؟",
+    a: "تخصصنا الدقيق يقتصر على توفير أفضل تجربة في النقل البري عبر الحافلات الحديثة والإقامة الفندقية، لضمان جودة الخدمة وراحة العائلة طوال الرحلة.",
+  },
+  {
+    q: "كيف أختار بين البرنامج الاقتصادي وبرنامج VIP؟",
+    a: "يمكنك اختيار البرنامج الاقتصادي إذا كنت تبحث عن توازن مناسب بين القيمة وراحة العائلة، أو برنامج VIP إذا كانت أولويتك الإقامة الأقرب للحرم وخصوصية وراحة أعلى. فريقنا يوضح لك التفاصيل عبر واتساب.",
   },
   {
     q: "كيف يتم الحجز؟",
-    a: "الحجز بسيط: اختر البرنامج المناسب، ثم تواصل معنا عبر واتساب لتحديد التفاصيل ومراجعة السعر، وبعدها يتم تأكيد حجزك مباشرة.",
-  },
-  {
-    q: "كيف أتواصل معكم؟",
-    a: `يمكنك التواصل معنا مباشرة عبر واتساب أو الاتصال على الرقمين: ${PHONE_DISPLAY.primary} أو ${PHONE_DISPLAY.secondary} — فريقنا جاهز للرد على استفساراتك.`,
-  },
-  {
-    q: "هل يمكن الحجز للعائلات؟",
-    a: "بالتأكيد، نوفر خيارات إقامة عائلية خاصة، وبرامجنا مصممة لتناسب العائلات والأفراد على حد سواء.",
+    a: "اختر البرنامج المناسب ثم تواصل معنا عبر واتساب. نراجع معك الموعد والتفاصيل والسعر النهائي، وبعدها يتم تأكيد الحجز مباشرة.",
   },
 ];
 
 export default function FAQ() {
   return (
-    <section className="relative py-20 md:py-28 bg-sand-rich section-gold-edge overflow-hidden">
+    <section id="faq" className="relative py-20 md:py-28 bg-sand-rich section-gold-edge overflow-hidden">
       <div className="pattern-drift" style={{ backgroundImage: `url(${ASSETS.pattern})` }} />
       <span className="deco-ring float-slow w-56 h-56 top-16 -left-24 hidden lg:block" />
       <div className="container max-w-3xl relative">
-        <SectionHeading kicker="استفساراتك" title="الأسئلة الشائعة" center />
+        <SectionHeading kicker="إجابات واضحة قبل الحجز" title="الأسئلة الشائعة" subtitle="كل ما تحتاج العائلة لمعرفته عن رحلات العمرة البرية من الرياض." center />
 
         <div className="reveal">
           <Accordion type="single" collapsible className="space-y-3">
-            {FAQS.map((f, i) => (
+            {FAQS.map((faq, i) => (
               <AccordionItem
-                key={i}
+                key={faq.q}
                 value={`faq-${i}`}
                 className="rounded-2xl border border-[var(--sand)] bg-white px-6 shadow-[0_4px_16px_rgba(11,61,46,0.04)] data-[state=open]:border-[var(--gold)]/50"
               >
                 <AccordionTrigger className="text-right text-base md:text-lg font-semibold text-[var(--emerald-deep)] hover:no-underline py-5">
-                  {f.q}
+                  {faq.q}
                 </AccordionTrigger>
-                <AccordionContent className="text-[var(--charcoal)]/70 leading-loose pb-5">
-                  {f.a}
-                </AccordionContent>
+                <AccordionContent className="text-[var(--charcoal)]/70 leading-loose pb-5">{faq.a}</AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>
