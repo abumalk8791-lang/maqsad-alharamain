@@ -27,6 +27,13 @@ const HOTELS = [
     image: ASSETS.hotel3,
     tag: "خيار إقامة",
   },
+  {
+    name: "فندق منى كونكورد",
+    location: "العزيزية – مكة المكرمة",
+    features: ["فندق ضمن خيارات الإقامة المتاحة", "تصنيف الفندق: ٤ نجوم", "نؤكد التوفر وتفاصيل الإقامة عند الاستفسار"],
+    image: ASSETS.hotel4,
+    tag: "٤ نجوم",
+  },
 ];
 
 export default function Hotels() {
@@ -40,7 +47,7 @@ export default function Hotels() {
           subtitle="نعرض أسماء الفنادق التي تتوفر ضمن برامجنا حالياً. نؤكد الفندق المناسب وتفاصيل الإقامة وفق البرنامج والموعد عند الاستفسار."
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
           {HOTELS.map((hotel, i) => (
             <article
               key={hotel.name}
