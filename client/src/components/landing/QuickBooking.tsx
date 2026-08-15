@@ -30,7 +30,7 @@ export default function QuickBooking() {
         <div className="reveal max-w-5xl mx-auto bg-white rounded-2xl shadow-[0_24px_64px_rgba(11,61,46,0.18)] border border-[var(--sand)] p-6 md:p-8">
           <div className="flex items-center gap-3 mb-6">
             <span className="w-8 h-[1px] bg-[var(--gold)]" />
-            <span className="text-[var(--gold)] text-xs font-semibold tracking-[0.2em]">ابدأ رحلتك</span>
+            <span className="text-[var(--gold)] text-xs font-semibold tracking-[0.2em]">استفسر عن برنامجك</span>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 items-end">
             <div>
@@ -53,7 +53,7 @@ export default function QuickBooking() {
               </select>
             </div>
             <div>
-              <label htmlFor="qb-date" className="block text-xs text-[var(--charcoal)]/60 mb-1 font-medium">التاريخ</label>
+              <label htmlFor="qb-date" className="block text-xs text-[var(--charcoal)]/60 mb-1 font-medium">الموعد المفضل</label>
               <div className="relative">
                 <input
                   id="qb-date"
@@ -61,7 +61,7 @@ export default function QuickBooking() {
                   value={date}
                   onChange={(e) => setDate(e.target.value)}
                   className={`${selectCls} [&::-webkit-datetime-edit]:opacity-0 absolute inset-0 z-10`}
-                  aria-label="اختر تاريخ الرحلة"
+                  aria-label="اختر الموعد المفضل للرحلة"
                 />
                 <div className={`${selectCls} pointer-events-none min-h-[2.6rem] flex items-center`} dir="ltr">
                   <span className={date ? "text-[var(--charcoal)]" : "text-[var(--charcoal)]/40"}>
@@ -75,7 +75,7 @@ export default function QuickBooking() {
               className="flex items-center justify-center gap-2 w-full py-3.5 rounded-full bg-[var(--emerald-deep)] text-[var(--ivory)] font-semibold transition-transform duration-200 hover:scale-[1.02] active:scale-95"
             >
               <Search className="w-4 h-4" />
-              ابحث عن رحلتك
+              اسأل عن المتاح
             </button>
           </div>
         </div>

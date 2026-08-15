@@ -9,23 +9,23 @@ const HOTELS = [
   {
     name: "فندق ضيافة الرجاء",
     location: "إبراهيم الخليل - مكة المكرمة",
-    features: ["قرب مناسب من الحرم", "إقامة تناسب راحة العائلة", "بيئة هادئة تمنحكم الخصوصية"],
+    features: ["فندق ضمن خيارات الإقامة المتاحة", "تتحدد الإتاحة بحسب البرنامج والموعد", "اسألنا عن تفاصيل السكن قبل الحجز"],
     image: ASSETS.hotel1,
-    tag: "إقامة مختارة",
+    tag: "خيار إقامة",
   },
   {
     name: "فندق فلسطين",
     location: "شارع إبراهيم الخليل - مكة المكرمة",
-    features: ["موقع يسهل الوصول إلى الحرم", "غرف توفر الخصوصية والراحة العائلية", "أجواء مناسبة للراحة بعد أداء المناسك"],
+    features: ["فندق ضمن خيارات الإقامة المتاحة", "نؤكد الفندق المتاح عند مراجعة البرنامج", "نوضح التفاصيل قبل تأكيد الحجز"],
     image: ASSETS.hotel2,
-    tag: "إقامة مختارة",
+    tag: "خيار إقامة",
   },
   {
     name: "فندق مكة ميلينيوم",
     location: "أبراج البيت – مكة المكرمة",
-    features: ["إطلالة وموقع مميزان قرب الحرم", "إقامة عائلية مرتبة وهادئة", "اختيار يلائم رحلات الراحة والخصوصية"],
+    features: ["فندق ضمن خيارات الإقامة المتاحة", "يتغير التوفر بحسب تاريخ الرحلة", "تواصل معنا لمعرفة تفاصيل البرنامج"],
     image: ASSETS.hotel3,
-    tag: "إقامة مختارة",
+    tag: "خيار إقامة",
   },
 ];
 
@@ -35,9 +35,9 @@ export default function Hotels() {
       <div className="pattern-drift" style={{ backgroundImage: `url(${ASSETS.pattern})` }} />
       <div className="container relative">
         <SectionHeading
-          kicker="إقامة فندقية للعائلات"
-          title="فنادق مختارة لراحتكم قرب الحرم"
-          subtitle="نرتب لكم إقامة فندقية قريبة من الحرم، مع اهتمام خاص بخصوصية العائلة وراحتها طوال الرحلة."
+          kicker="فنادق مكة ضمن برامج العمرة"
+          title="اسأل عن الفندق المتاح لرحلتك"
+          subtitle="نعرض أسماء الفنادق التي تتوفر ضمن برامجنا حالياً. نؤكد الفندق المناسب وتفاصيل الإقامة وفق البرنامج والموعد عند الاستفسار."
         />
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -50,7 +50,7 @@ export default function Hotels() {
               <div className="relative h-72 overflow-hidden bg-[var(--charcoal)]/5">
                 <img
                   src={hotel.image}
-                  alt={`${hotel.name} — إقامة عائلية قريبة من الحرم`}
+                  alt={`${hotel.name} ضمن خيارات الإقامة في برامج العمرة من الرياض`}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   loading="lazy"
                   onError={(event) => ((event.target as HTMLImageElement).style.opacity = "0")}
@@ -78,12 +78,12 @@ export default function Hotels() {
                 </ul>
 
                 <a
-                  href={waLink(`السلام عليكم، أرغب في الاستفسار عن الإقامة في ${hotel.name} ضمن رحلة عمرة برية من الرياض لدى مقصد الحرمين.`)}
+                  href={waLink(`السلام عليكم، أرغب في معرفة توفر ${hotel.name} ضمن برنامج عمرة من الرياض لدى مقصد الحرمين.`)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full inline-flex justify-center items-center py-3.5 px-6 rounded-xl bg-[var(--emerald-deep)] text-[var(--gold-soft)] font-bold transition-all hover:bg-[var(--charcoal)] hover:shadow-lg active:scale-95"
                 >
-                  استفسر عن الإقامة
+                  اسأل عن توفر الفندق
                 </a>
               </div>
             </article>

@@ -19,7 +19,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="mt-5 text-sm text-white/60 leading-loose max-w-xs">
-              تجربة عمرة وزيارة فاخرة من الرياض — نرتّب البرنامج والإقامة والنقل، لتتفرغ أنت لسكينة رحلتك.
+              برامج عمرة من الرياض تشمل النقل بالحافلات والإقامة الفندقية. اسألنا عن المدة والوجهة والفندق المتاحين قبل الحجز.
             </p>
           </div>
 
@@ -63,7 +63,7 @@ export default function Footer() {
                   className="inline-flex items-center gap-2.5 mt-2 px-5 py-2.5 rounded-full border border-[var(--gold)]/40 text-[var(--gold-soft)] text-sm font-semibold hover:bg-[var(--gold)]/10 transition-colors"
                 >
                   <WhatsAppIcon className="w-4 h-4 text-[#25D366]" />
-                  WhatsApp
+                  تواصل عبر واتساب
                 </a>
               </li>
             </ul>

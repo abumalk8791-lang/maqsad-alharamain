@@ -5,18 +5,18 @@ import { Building2, Bus, CheckCircle2 } from "lucide-react";
 
 const SERVICES = [
   {
-    title: "إقامة فندقية مميزة",
+    title: "إقامة فندقية ضمن البرنامج",
     description:
-      "نبحث عن إقامة فندقية مناسبة وقريبة من الحرم بحسب البرنامج، لتقضي العائلة وقتها براحة وخصوصية بعد أداء المناسك.",
+      "نعرض خيارات الإقامة المتوفرة، ثم نؤكد الفندق وتفاصيل السكن بحسب البرنامج والموعد قبل الحجز.",
     icon: Building2,
-    points: ["فنادق مختارة لقربها من الحرم", "إقامة تناسب راحة العائلة", "خصوصية وهدوء طوال فترة الإقامة"],
+    points: ["أسماء فنادق ضمن البرامج المتاحة", "تأكيد الفندق حسب التوفر", "تفاصيل الإقامة قبل تأكيد الحجز"],
   },
   {
-    title: "نقل بري حديث وآمن",
+    title: "نقل بالحافلات من الرياض",
     description:
-      "تبدأ الرحلة من الرياض بحافلات حديثة ومريحة، مع تنظيم واضح يساعد العائلة على التنقل بهدوء في الذهاب والعودة.",
+      "نوضح لك نقطة التجمع والوجهة وموعد الانطلاق بحسب البرنامج، ثم نرسل المعلومات المؤكدة قبل الرحلة.",
     icon: Bus,
-    points: ["انطلاق من نقاط تجمع مريحة في الرياض", "رحلة برية منظمة ومتابعة مستمرة", "راحة وأمان لجميع أفراد العائلة"],
+    points: ["انطلاق من الرياض وفق الموعد المتاح", "نقل بالحافلات ضمن البرنامج", "تأكيد تفاصيل التجمع والانطلاق"],
   },
 ];
 
@@ -27,10 +27,10 @@ export default function WhyUs() {
       <span className="deco-ring w-52 h-52 -bottom-20 -right-16 hidden md:block" style={{ animationDelay: "3s" }} />
       <div className="container relative">
         <div className="max-w-3xl mx-auto text-center reveal">
-          <span className="kicker justify-center">عمرة برية من الرياض</span>
-          <h2 className="mt-5 text-3xl md:text-5xl font-bold text-[var(--emerald-deep)] leading-[1.3]">خدماتنا لضمان راحتك</h2>
+          <span className="kicker justify-center">الإقامة والمواصلات</span>
+          <h2 className="mt-5 text-3xl md:text-5xl font-bold text-[var(--emerald-deep)] leading-[1.3]">ما الذي نوضحه لك قبل الحجز؟</h2>
           <p className="mt-5 text-[var(--charcoal)]/70 leading-relaxed md:text-lg">
-            نرتب السكن والتنقل بعناية، حتى تكون رحلة عائلتكم من الرياض إلى الحرمين واضحة ومريحة من البداية إلى النهاية.
+            نراجع معك خيارات السكن والنقل وموعد الرحلة، حتى تعرف تفاصيل برنامجك قبل أن تؤكده.
           </p>
         </div>
 

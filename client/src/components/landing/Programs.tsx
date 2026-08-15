@@ -1,5 +1,5 @@
 /**
- * مقارنة البرامج: عمرة برية من الرياض مع إقامة فندقية ونقل عائلي
+ * مقارنة برامج العمرة من الرياض مع إقامة فندقية ونقل بالحافلات
  */
 import { ASSETS, waLink } from "@/lib/brand";
 import WhatsAppIcon from "./WhatsAppIcon";
@@ -19,24 +19,24 @@ const PROGRAMS: Program[] = [
   {
     name: "البرنامج الاقتصادي",
     image: ASSETS.hotel1,
-    alt: "إقامة فندقية مريحة قريبة من الحرم لبرنامج العمرة البري من الرياض",
-    summary: "خيار مناسب لمن يبحث عن رحلة مرتبة بسعر متوازن، يجمع النقل البري المنظم من الرياض مع إقامة فندقية مريحة للعائلة.",
+    alt: "فندق ضمن خيارات الإقامة لبرنامج العمرة الاقتصادي من الرياض",
+    summary: "خيار لمن يريد برنامجاً واضحاً من الرياض يشمل النقل والإقامة، مع تأكيد تفاصيل الفندق والموعد والسعر عند التواصل.",
     features: [
-      { icon: Bus, text: "حافلات حديثة ومريحة تنطلق من الرياض" },
-      { icon: Building2, text: "إقامة فندقية مختارة بعناية لراحة العائلة" },
-      { icon: ShieldCheck, text: "تنسيق واضح للرحلة من الانطلاق حتى العودة" },
+      { icon: Bus, text: "نقل بالحافلات من الرياض ضمن البرنامج" },
+      { icon: Building2, text: "إقامة فندقية بحسب المتاح عند الحجز" },
+      { icon: ShieldCheck, text: "تأكيد التجمع والموعد والتفاصيل قبل الانطلاق" },
     ],
   },
   {
     name: "برنامج VIP",
-    badge: "مستوى أعلى من الراحة",
+    badge: "خيارات أعلى من الراحة",
     image: ASSETS.hotel3,
-    alt: "فندق قريب من الحرم لبرنامج العمرة البري VIP من الرياض",
-    summary: "للعائلات التي تفضل مساحة أكبر وهدوءاً أكثر في الطريق، مع إقامة فندقية مميزة قريبة من الحرم واهتمام أدق بالتفاصيل.",
+    alt: "فندق ضمن خيارات برنامج VIP للعمرة من الرياض",
+    summary: "لمن يفضّل مستوى أعلى من الراحة والخصوصية في التنقل والإقامة، مع توضيح الخيارات المتاحة قبل اتخاذ قرار الحجز.",
     features: [
-      { icon: Bus, text: "حافلات VIP بمقاعد مريحة ومميزة" },
-      { icon: MapPin, text: "إقامة فندقية فاخرة قريبة من الحرم" },
-      { icon: ShieldCheck, text: "خصوصية وراحة إضافية للعائلة طوال الرحلة" },
+      { icon: Bus, text: "خيارات نقل أكثر راحة وفق البرنامج المتاح" },
+      { icon: MapPin, text: "خيارات إقامة فندقية مميزة" },
+      { icon: ShieldCheck, text: "تنسيق يراعي راحة العائلة وخصوصيتها" },
     ],
   },
 ];
@@ -51,9 +51,9 @@ export default function Programs() {
       <span className="deco-ring float-slow w-64 h-64 -bottom-28 -left-20 hidden md:block" />
       <div className="container relative">
         <SectionHeading
-          kicker="برامج العمرة البرية من الرياض"
-          title="اختر البرنامج المناسب لعائلتك"
-          subtitle="نوضح لك خيارات الإقامة والنقل بصدق ووضوح، لتختار ما يلائم احتياج عائلتك وميزانيتك."
+          kicker="باقات العمرة من الرياض"
+          title="اختر الباقة التي تناسب احتياجك"
+          subtitle="قارن بين البرنامج الاقتصادي وVIP، ثم اسألنا عن المدة والوجهة والفندق والسعر المتاحين."
           center
         />
 
@@ -87,13 +87,13 @@ export default function Programs() {
                 </ul>
 
                 <a
-                  href={waLink(`السلام عليكم، أرغب في الاستفسار عن ${program.name} للعمرة البرية من الرياض لدى مقصد الحرمين.`)}
+                  href={waLink(`السلام عليكم، أرغب في الاستفسار عن ${program.name} للعمرة من الرياض لدى مقصد الحرمين.`)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-7 flex items-center justify-center gap-2 w-full py-3.5 rounded-full bg-[var(--gold)] text-[var(--emerald-deep)] font-bold text-sm transition-transform duration-200 hover:scale-[1.02] active:scale-95"
                 >
                   <WhatsAppIcon className="w-4 h-4" />
-                  استفسر واحجز عبر الواتساب
+                  اسأل عن تفاصيل الباقة
                 </a>
               </div>
             </article>
@@ -101,7 +101,7 @@ export default function Programs() {
         </div>
 
         <p className="reveal mt-8 text-center text-sm text-[var(--charcoal)]/60">
-          نؤكد المواعيد والسعر النهائي عند التواصل عبر واتساب، حتى تكون الصورة واضحة قبل الحجز.
+          لا نعرض سعراً ثابتاً؛ نؤكد المدة والموعد والفندق والسعر الحاليين عند التواصل عبر واتساب.
         </p>
       </div>
     </section>

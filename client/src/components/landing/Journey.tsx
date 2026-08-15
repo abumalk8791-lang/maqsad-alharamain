@@ -7,10 +7,10 @@ import { waLink } from "@/lib/brand";
 import WhatsAppIcon from "./WhatsAppIcon";
 
 const STEPS = [
-  { num: "01", title: "اختر البرنامج", desc: "تصفح برامجنا واختر ما يناسب رحلتك ومدتك" },
-  { num: "02", title: "حدد التفاصيل", desc: "الوجهة، التاريخ، نوع الإقامة وعدد الأفراد" },
-  { num: "03", title: "راجع السعر", desc: "نرسل لك التفاصيل الكاملة والسعر النهائي بوضوح" },
-  { num: "04", title: "احجز عبر واتساب", desc: "أكّد حجزك برسالة واحدة... واستعد للانطلاق" },
+  { num: "01", title: "اختر المدة والوجهة", desc: "حدد ما إذا كنت تبحث عن مكة أو مكة والمدينة، والمدة المناسبة لك." },
+  { num: "02", title: "أرسل تفاصيلك", desc: "أخبرنا بعدد المسافرين والموعد الذي تفضله عبر واتساب." },
+  { num: "03", title: "راجع المتاح", desc: "نوضح لك البرنامج والموعد والسكن والنقل والسعر المتاحين." },
+  { num: "04", title: "أكد الحجز", desc: "بعد الاتفاق، نرسل لك معلومات التجمع والانطلاق المؤكدة." },
 ];
 
 export default function Journey() {
@@ -23,9 +23,9 @@ export default function Journey() {
       <span className="deco-ring float-slow w-72 h-72 -bottom-28 -right-24 hidden md:block" />
       <div className="container relative">
         <SectionHeading
-          kicker="طريقة الحجز"
-          title="أربع خطوات تفصلك عن الحرمين"
-          subtitle="رحلة حجز بسيطة وواضحة — من اختيار البرنامج حتى الانطلاق."
+          kicker="كيف تحجز؟"
+          title="احجز رحلتك بخطوات واضحة"
+          subtitle="نراجع التفاصيل معك قبل التأكيد، حتى تعرف ما يشمله البرنامج وما يتوفر في موعدك."
           center
         />
 
@@ -59,7 +59,7 @@ export default function Journey() {
             className="inline-flex items-center gap-3 px-9 py-4 rounded-full bg-[var(--emerald-deep)] text-[var(--ivory)] font-bold text-lg transition-transform duration-200 hover:scale-[1.03] active:scale-95 shadow-[0_12px_36px_rgba(11,61,46,0.3)]"
           >
             <WhatsAppIcon className="w-5 h-5" />
-            ابدأ الحجز الآن
+            اسأل عن البرنامج المتاح
           </a>
         </div>
       </div>

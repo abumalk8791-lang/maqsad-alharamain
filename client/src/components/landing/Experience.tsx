@@ -4,10 +4,10 @@
 import { ASSETS } from "@/lib/brand";
 
 const ITEMS = [
-  { num: "01", title: "إقامة مختارة بعناية" },
-  { num: "02", title: "نقل مريح" },
-  { num: "03", title: "برامج مرنة" },
-  { num: "04", title: "خدمة ومتابعة" },
+  { num: "01", title: "الوجهة والمدة" },
+  { num: "02", title: "النقل من الرياض" },
+  { num: "03", title: "الفندق المتاح" },
+  { num: "04", title: "تأكيد التفاصيل" },
 ];
 
 export default function Experience() {
@@ -18,7 +18,7 @@ export default function Experience() {
           <figure className="reveal img-hover-scale relative rounded-3xl overflow-hidden h-[420px] lg:h-[560px] shadow-[0_20px_60px_rgba(11,61,46,0.15)]">
             <img
               src={ASSETS.madinahEditorial}
-              alt="المسجد النبوي الشريف وقت الغروب"
+              alt="المسجد النبوي في المدينة المنورة ضمن برامج العمرة من الرياض"
               loading="lazy"
               className="w-full h-full object-cover"
             />
@@ -27,12 +27,12 @@ export default function Experience() {
 
           <div>
             <div className="reveal">
-              <span className="kicker">تجربتك معنا</span>
+              <span className="kicker">تفاصيل الرحلة</span>
               <h2 className="mt-4 text-3xl md:text-5xl font-bold text-[var(--emerald-deep)]">
-                كل التفاصيل محسوبة
+                ما الذي تسأل عنه قبل الحجز؟
               </h2>
               <p className="mt-5 text-lg text-[var(--charcoal)]/70 leading-loose">
-                «من اختيار الإقامة إلى تفاصيل التنقل، نهتم بما يجعل رحلتك أكثر راحة وطمأنينة.»
+                ابدأ بالوجهة والمدة، ثم اسأل عن النقل والفندق والموعد والسعر المتاحين لبرنامجك.
               </p>
             </div>
 

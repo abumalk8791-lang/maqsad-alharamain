@@ -6,12 +6,12 @@ import SectionHeading from "./SectionHeading";
 import { CheckCircle2 } from "lucide-react";
 
 const FLEET = [
-  { src: ASSETS.bus1, label: "حافلات حديثة من الرياض" },
-  { src: ASSETS.bus2, label: "رحلة طريق مريحة للعائلة" },
-  { src: ASSETS.bus3, label: "نقل بري منظم وآمن" },
-  { src: ASSETS.bus4, label: "راحة هادئة طوال الطريق" },
-  { src: ASSETS.bus5, label: "متابعة واهتمام بالتفاصيل" },
-  { src: ASSETS.bus6, label: "تنظيم موثوق للرحلة البرية" },
+  { src: ASSETS.bus1, label: "حافلة ضمن النقل البري من الرياض" },
+  { src: ASSETS.bus2, label: "نقل بالحافلات ضمن برنامج العمرة" },
+  { src: ASSETS.bus3, label: "حافلة لرحلات العمرة من الرياض" },
+  { src: ASSETS.bus4, label: "نقل بري وفق البرنامج المتاح" },
+  { src: ASSETS.bus5, label: "صورة من حافلات برامج العمرة" },
+  { src: ASSETS.bus6, label: "حافلة ضمن رحلة عمرة من الرياض" },
 ];
 
 export default function Transport() {
@@ -24,9 +24,9 @@ export default function Transport() {
 
       <div className="container relative">
         <SectionHeading
-          kicker="النقل البري من الرياض"
-          title="حافلات حديثة لرحلة مريحة وآمنة"
-          subtitle="تنطلق رحلاتنا من الرياض بحافلات حديثة ومنظمة، لتصل العائلة إلى الحرمين براحة وطمأنينة في كل مرحلة من الرحلة."
+          kicker="المواصلات من الرياض"
+          title="نقل بالحافلات ضمن برنامج العمرة"
+          subtitle="نتحقق معك من نقطة التجمع والوجهة وموعد الانطلاق قبل الحجز، ثم نرسل المعلومات المؤكدة وفق البرنامج المتاح."
           light
         />
 
@@ -53,7 +53,7 @@ export default function Transport() {
         </div>
 
         <div className="reveal mt-16 flex flex-wrap justify-center gap-x-12 gap-y-4">
-          {["انطلاق من نقاط تجمع مريحة في الرياض", "حافلات حديثة لراحة العائلة", "رحلة برية منظمة ومتابعة مستمرة", "تواصل مباشر قبل الرحلة وخلالها"].map((point) => (
+          {["نقطة تجمع وموعد بحسب البرنامج", "نقل بالحافلات من الرياض", "تأكيد معلومات الانطلاق قبل الرحلة", "تواصل مباشر للاستفسار"].map((point) => (
             <span key={point} className="flex items-center gap-2 text-[var(--ivory)]/85 text-sm md:text-base">
               <CheckCircle2 className="w-5 h-5 text-[var(--gold)]" />
               {point}
@@ -63,12 +63,12 @@ export default function Transport() {
 
         <div className="reveal mt-12 text-center">
           <a
-            href={waLink("السلام عليكم، أرغب في الاستفسار عن النقل البري من الرياض ضمن رحلة العمرة لدى مقصد الحرمين.")}
+            href={waLink("السلام عليكم، أرغب في معرفة مواعيد النقل المتاحة من الرياض ضمن برامج العمرة لدى مقصد الحرمين.")}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 bg-[var(--gold)] text-[var(--emerald-deep)] px-10 py-4 rounded-full font-black text-lg transition-all hover:scale-105 hover:shadow-[0_0_25px_rgba(212,175,55,0.4)] active:scale-95"
           >
-            استفسر عن النقل من الرياض
+            اسأل عن مواعيد النقل
           </a>
         </div>
       </div>

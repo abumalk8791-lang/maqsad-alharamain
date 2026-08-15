@@ -6,9 +6,9 @@ import { ASSETS, waLink } from "@/lib/brand";
 import WhatsAppIcon from "./WhatsAppIcon";
 
 const ASSURANCES = [
-  { title: "عناية بالتفاصيل", desc: "من لحظة تأكيد الحجز حتى العودة، تفاصيل رحلتك متابعة بعناية." },
-  { title: "وضوح تام", desc: "السعر والبرنامج والمواعيد تصلك كاملة وواضحة قبل التأكيد." },
-  { title: "معك طوال الرحلة", desc: "فريقنا على تواصل مباشر معك قبل الانطلاق وأثناء الرحلة." },
+  { title: "تفاصيل قبل التأكيد", desc: "نراجع معك الوجهة والمدة والسكن والنقل قبل أن تحجز." },
+  { title: "السعر حسب المتاح", desc: "نوضح السعر للموعد والبرنامج المتاحين بدلاً من عرض سعر ثابت غير مؤكد." },
+  { title: "تواصل مباشر", desc: "يمكنك الاستفسار عبر واتساب عن أي تفصيل يتعلق ببرنامجك." },
 ];
 
 export default function Testimonials() {
@@ -21,11 +21,11 @@ export default function Testimonials() {
       <div className="container relative">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div className="reveal order-2 lg:order-1">
-            <span className="kicker">عهدنا لك</span>
+            <span className="kicker">معلومات واضحة قبل الحجز</span>
             <h2 className="mt-5 text-3xl md:text-5xl font-bold text-[var(--ivory)] leading-[1.3]">
-              نرافق تفاصيل الرحلة بهدوء،
+              اسأل عن تفاصيل البرنامج،
               <br />
-              <span className="font-light text-[var(--gold-soft)]">من الحجز حتى العودة</span>
+              <span className="font-light text-[var(--gold-soft)]">ثم اختر ما يناسبك</span>
             </h2>
 
             <div className="mt-10 space-y-7">
@@ -54,7 +54,7 @@ export default function Testimonials() {
           <figure className="reveal order-1 lg:order-2 img-hover-scale relative rounded-3xl overflow-hidden h-[360px] lg:h-[520px] shadow-[0_24px_64px_rgba(0,0,0,0.35)]">
             <img
               src={ASSETS.madinahNight}
-              alt="المسجد النبوي الشريف مضاءً ليلًا"
+              alt="المسجد النبوي في المدينة المنورة ضمن برامج عمرة من الرياض"
               loading="lazy"
               className="w-full h-full object-cover"
             />
