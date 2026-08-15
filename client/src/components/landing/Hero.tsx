@@ -4,8 +4,41 @@
 import { ASSETS, scrollToSection, waLink } from "@/lib/brand";
 import WhatsAppIcon from "./WhatsAppIcon";
 import { ChevronDown } from "lucide-react";
+import { useEffect, useState } from "react";
+
+const heroDescription = "نرتب رحلة العمرة من الرياض بوضوح: نراجع معك الوجهة والمدة والسكن والنقل، ثم نؤكد الموعد والسعر المتاحين قبل الحجز.";
 
 export default function Hero() {
+  const [typedDescription, setTypedDescription] = useState("");
+  const [isTyping, setIsTyping] = useState(true);
+
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setTypedDescription(heroDescription);
+      setIsTyping(false);
+      return;
+    }
+
+    let characterIndex = 0;
+    let typingInterval: ReturnType<typeof window.setInterval> | undefined;
+    const typingStart = window.setTimeout(() => {
+      typingInterval = window.setInterval(() => {
+        characterIndex += 1;
+        setTypedDescription(heroDescription.slice(0, characterIndex));
+
+        if (characterIndex >= heroDescription.length) {
+          if (typingInterval !== undefined) window.clearInterval(typingInterval);
+          setIsTyping(false);
+        }
+      }, 16);
+    }, 680);
+
+    return () => {
+      window.clearTimeout(typingStart);
+      if (typingInterval !== undefined) window.clearInterval(typingInterval);
+    };
+  }, []);
+
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <img
@@ -18,13 +51,17 @@ export default function Hero() {
 
       <div className="relative z-10 container text-center pt-28 pb-40">
         <p className="kicker justify-center !text-[var(--gold-soft)] hero-copy-enter hero-copy-delay-1">عمرة من الرياض • مكة والمدينة حسب البرنامج • إقامة ونقل</p>
-        <h1 className="mt-6 text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight [text-shadow:0_2px_24px_rgba(0,0,0,0.5)] hero-copy-enter hero-copy-delay-2">
+        <h1 className="mt-6 text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight [text-shadow:0_2px_24px_rgba(0,0,0,0.5)] hero-title-fade-down">
           عمرة من الرياض إلى مكة والمدينة
           <br />
           <span className="text-[var(--gold-soft)]">إقامة فندقية ونقل بالحافلات</span>
         </h1>
-        <p className="mt-6 text-lg md:text-2xl text-white/90 font-light max-w-3xl mx-auto leading-relaxed hero-copy-enter hero-copy-delay-3">
-          نرتب رحلة العمرة من الرياض بوضوح: نراجع معك الوجهة والمدة والسكن والنقل، ثم نؤكد الموعد والسعر المتاحين قبل الحجز.
+        <p
+          aria-label={heroDescription}
+          className="mt-6 min-h-[5.5rem] md:min-h-[4.5rem] text-lg md:text-2xl text-white/90 font-light max-w-3xl mx-auto leading-relaxed hero-description-typewriter"
+        >
+          <span>{typedDescription}</span>
+          <span aria-hidden="true" className={isTyping ? "typewriter-cursor" : "typewriter-cursor typewriter-cursor-hidden"}>|</span>
         </p>
 
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 hero-copy-enter hero-copy-delay-4">
