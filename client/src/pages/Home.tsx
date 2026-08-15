@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "wouter";
 import {
   ArrowLeft,
   ChevronDown,
@@ -18,6 +19,7 @@ import { PACKAGES } from "@/data/packages";
 import { TRANSPORT_DETAILS, TRANSPORT_GALLERY } from "@/data/transportation";
 import { DESTINATIONS, TRIP_DURATIONS, TRIP_FACTS, TRIP_TYPES, tripInquiryMessage } from "@/data/trips";
 import { ASSETS, scrollToSection } from "@/lib/brand";
+import { Seo } from "@/components/site/Seo";
 
 function WhatsAppButton({
   children,
@@ -113,15 +115,20 @@ export default function Home() {
         )}
       </header>
 
+      <Seo
+        path="/"
+        title="عمرة من الرياض إلى مكة والمدينة | مقصد الحرمين"
+        description="رحلات عمرة من الرياض بمدد 3 و5 و7 أيام، مع خيارات إلى مكة المكرمة أو مكة والمدينة تشمل الإقامة الفندقية والنقل بالحافلات حسب المتاح."
+      />
       <main>
         <section className="page-container grid gap-8 py-8 md:grid-cols-12 md:items-stretch md:py-14 lg:py-20">
           <div className="flex flex-col justify-center md:col-span-6 lg:col-span-5">
-            <span className="eyebrow">رحلات عمرة مميزة من الرياض 🕋</span>
+            <span className="eyebrow">رحلات عمرة من مدينة الرياض</span>
             <h1 className="mt-5 max-w-xl text-4xl font-bold leading-[1.16] tracking-[-.04em] sm:text-5xl lg:text-6xl">
-              رحلتك للعمرة <span className="text-[var(--gold)]">تبدأ من الرياض</span>
+              عمرة من الرياض إلى <span className="text-[var(--gold)]">مكة والمدينة</span>
             </h1>
             <p className="mt-6 max-w-lg text-base leading-8 text-[var(--ink-soft)] md:text-lg">
-              نرتب لك تفاصيل رحلتك من الحجز وحتى العودة، مع خيارات مناسبة للأفراد والعوائل تشمل الإقامة الفندقية والنقل بالحافلات.
+              رحلات بمدد 3 و5 و7 أيام، مع خيارات إلى مكة المكرمة أو مكة والمدينة حسب المتاح. نوضح لك الإقامة والنقل والموعد والسعر الحالي قبل الحجز.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <WhatsAppButton message="السلام عليكم، أرغب في حجز رحلة عمرة من الرياض لدى مقصد الحرمين." className="bg-[var(--ink)] text-white hover:bg-[var(--olive)]">
@@ -133,7 +140,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative min-h-[21rem] overflow-hidden rounded-[1.75rem] bg-[var(--paper-deep)] md:col-span-6 lg:col-span-7">
+          <div className="hero-image image-breathe relative min-h-[21rem] overflow-hidden rounded-[1.75rem] bg-[var(--paper-deep)] md:col-span-6 lg:col-span-7">
             <img src={ASSETS.heroMakkah} alt="المسجد الحرام في مكة المكرمة" className="h-full w-full object-cover" fetchPriority="high" />
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/65 via-black/20 to-transparent p-6 text-white sm:p-8">
               <p className="max-w-sm text-sm leading-7 text-white/90">خطط لرحلتك بهدوء، واسألنا عن البرنامج الأنسب لك قبل أن تتخذ قرارك.</p>
@@ -157,7 +164,7 @@ export default function Home() {
         <section id="trips" className="section-shell page-container">
           <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
             <div className="lg:col-span-5">
-              <SectionIntro eyebrow="ابدأ من المعلومات التي تهمك" title="اختر الرحلة المناسبة لك" copy="حدد الوجهة ونوع الرحلة والوقت المناسب، ثم افتح محادثة واتساب برسالة مرتبة بالتفاصيل التي اخترتها." />
+              <SectionIntro eyebrow="ابدأ من المعلومات التي تهمك" title="تفاصيل رحلات العمرة من الرياض" copy="حدد الوجهة ونوع الرحلة والوقت المناسب، ثم افتح محادثة واتساب برسالة مرتبة بالتفاصيل التي اخترتها." />
             </div>
             <form className="grid gap-4 rounded-3xl border border-[var(--line)] bg-white p-5 shadow-[0_16px_40px_rgba(24,53,46,.06)] sm:grid-cols-2 lg:col-span-7 lg:grid-cols-4" onSubmit={(event) => { event.preventDefault(); askAboutTrip(); }}>
               <label className="text-sm font-semibold">
@@ -188,7 +195,7 @@ export default function Home() {
 
           <div className="mt-10 grid gap-4 md:grid-cols-12">
             {TRIP_DURATIONS.map((trip, index) => (
-              <article key={trip.days} className={`border-t-2 border-[var(--gold)] bg-white p-6 ${index === 0 ? "md:col-span-4" : index === 1 ? "md:col-span-5" : "md:col-span-3"}`}>
+              <article key={trip.days} className={`reveal-card border-t-2 border-[var(--gold)] bg-white p-6 ${index === 0 ? "md:col-span-4" : index === 1 ? "md:col-span-5" : "md:col-span-3"}`}>
                 <p className="text-3xl font-bold tracking-[-.04em]">{trip.days}</p>
                 <h3 className="mt-5 text-lg font-bold">{trip.title}</h3>
                 <p className="mt-2 text-sm leading-7 text-[var(--ink-soft)]">{trip.description}</p>
@@ -200,12 +207,35 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="border-y border-[var(--line)] bg-white py-12 sm:py-16">
+          <div className="page-container">
+            <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
+              <SectionIntro eyebrow="اختر المعلومة التي تحتاجها" title="صفحات تساعدك قبل أن تسأل" copy="شرح عملي للرحلات والباقات والفنادق والتواصل، دون وعود أو تفاصيل غير مؤكدة." />
+              <Link href="/contact" className="text-sm font-bold text-[var(--ink)] underline underline-offset-4">ابدأ الاستفسار</Link>
+            </div>
+            <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+              {[
+                ["عمرة من الرياض", "المدد والوجهات وخطوة البدء", "/umrah-from-riyadh"],
+                ["باقات العمرة", "الاقتصادي وVIP قبل تأكيد التفاصيل", "/umrah-packages"],
+                ["مكة والمدينة", "اختيار الوجهة وفق البرنامج المتاح", "/makkah-and-madinah"],
+                ["الفنادق", "خيارات الإقامة التي نعرضها", "/hotels"],
+                ["تواصل وحجز", "ما المعلومات التي نحتاجها منك", "/contact"],
+              ].map(([title, copy, href]) => (
+                <Link key={href} href={href} className="reveal-card group flex min-h-40 flex-col justify-between border border-[var(--line)] bg-[var(--paper)] p-4 hover:border-[var(--gold)]">
+                  <div><h3 className="font-bold">{title}</h3><p className="mt-2 text-xs leading-6 text-[var(--ink-soft)]">{copy}</p></div>
+                  <span className="mt-3 text-xs font-bold text-[var(--gold)] transition-transform group-hover:-translate-x-1">اعرف المزيد ←</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <section id="packages" className="section-shell bg-[var(--paper-deep)]">
           <div className="page-container">
-            <SectionIntro eyebrow="باقات واضحة قبل التواصل" title="اقتصادي أو VIP — اختر ما يناسبك" copy="لا نضع سعراً افتراضياً. أخبرنا بالمدة والوجهة وعدد المسافرين، ونوضح لك السعر الحالي والتفاصيل المتاحة." />
+            <SectionIntro eyebrow="باقات واضحة قبل التواصل" title="باقات العمرة من الرياض" copy="قارن بين الاقتصادي وVIP، ثم أخبرنا بالمدة والوجهة وعدد المسافرين لنوضح لك السعر الحالي والتفاصيل المتاحة." />
             <div className="mt-10 grid gap-6 lg:grid-cols-12">
               {PACKAGES.map((pkg, index) => (
-                <article key={pkg.id} className={`overflow-hidden rounded-[1.5rem] ${index === 0 ? "bg-white lg:col-span-7" : "bg-[var(--ink)] text-white lg:col-span-5"}`}>
+                <article key={pkg.id} className={`reveal-card overflow-hidden rounded-[1.5rem] ${index === 0 ? "bg-white lg:col-span-7" : "bg-[var(--ink)] text-white lg:col-span-5"}`}>
                   <div className={`grid h-full ${index === 0 ? "md:grid-cols-2" : ""}`}>
                     {index === 0 && <img src={pkg.image} alt={pkg.imageAlt} loading="lazy" className="h-64 w-full object-cover md:h-full" />}
                     <div className="flex flex-col p-7 sm:p-8">
@@ -253,12 +283,12 @@ export default function Home() {
           <div className="page-container grid gap-10 lg:grid-cols-12 lg:items-center">
             <div className="lg:col-span-5">
               <span className="eyebrow !text-[var(--gold-wash)]">كيف تتم الرحلة؟</span>
-              <h2 className="mt-4 text-4xl font-bold leading-tight tracking-[-.04em]">خطوات بسيطة من السؤال إلى الانطلاق</h2>
+              <h2 className="mt-4 text-4xl font-bold leading-tight tracking-[-.04em]">كيف تحجز رحلة عمرة من الرياض؟</h2>
               <p className="mt-5 max-w-md text-sm leading-8 text-white/70">لا تحتاج إلى إنشاء حساب أو تعبئة نموذج طويل. تبدأ المحادثة، ثم نوضح لك ما هو متاح قبل أن تؤكد قرارك.</p>
             </div>
             <ol className="lg:col-span-7">
               {BOOKING_STEPS.map((step) => (
-                <li key={step.number} className="grid grid-cols-[3.5rem_1fr] gap-4 border-b border-white/15 py-5 last:border-b-0">
+                <li key={step.number} className="timeline-step grid grid-cols-[3.5rem_1fr] gap-4 border-b border-white/15 py-5 last:border-b-0">
                   <span className="text-2xl font-bold text-[var(--gold-wash)]">{step.number}</span>
                   <div><h3 className="font-bold">{step.title}</h3><p className="mt-1 text-sm leading-7 text-white/65">{step.description}</p></div>
                 </li>
@@ -269,12 +299,12 @@ export default function Home() {
 
         <section id="hotels" className="section-shell page-container">
           <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
-            <div className="lg:col-span-6"><SectionIntro eyebrow="أين ستسكن؟" title="خيارات إقامة تظهر بوضوح" copy="نعرض أسماء الفنادق والمواقع المتوفرة لدينا حالياً. اسألنا عن الفندق المتاح ضمن البرنامج الذي تختاره." /></div>
+            <div className="lg:col-span-6"><SectionIntro eyebrow="أين ستسكن؟" title="فنادق مكة والمدينة ضمن برامجنا" copy="نعرض أسماء الفنادق والمواقع المتوفرة لدينا حالياً. اسألنا عن الفندق المتاح ضمن البرنامج الذي تختاره." /></div>
             <div className="lg:col-span-6 lg:pb-1"><p className="border-r-2 border-[var(--gold)] pr-4 text-sm leading-7 text-[var(--ink-soft)]">لا نعرض مسافات أو تصنيفات أو مرافق تفصيلية غير مؤكدة. نوضح لك كل ما يتعلق بالإقامة عند الاستفسار.</p></div>
           </div>
           <div className="mt-10 grid gap-5 md:grid-cols-12">
             {HOTELS.map((hotel, index) => (
-              <article key={hotel.id} className={`overflow-hidden bg-white ${index === 0 ? "md:col-span-7" : "md:col-span-5"}`}>
+              <article key={hotel.id} className={`reveal-card overflow-hidden bg-white ${index === 0 ? "md:col-span-7" : "md:col-span-5"}`}>
                 <img src={hotel.image} alt={hotel.alt} loading="lazy" className={`w-full object-cover ${index === 0 ? "h-80" : "h-64"}`} />
                 <div className="border-x border-b border-[var(--line)] p-5">
                   <span className="flex items-center gap-1.5 text-xs font-bold text-[var(--gold)]"><MapPin className="h-3.5 w-3.5" /> {hotel.location}</span>
@@ -291,14 +321,14 @@ export default function Home() {
         <section className="section-shell bg-white">
           <div className="page-container">
             <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
-              <div className="lg:col-span-5"><SectionIntro eyebrow="الطريق جزء من الرحلة" title="تنقل منظم يبدأ من الرياض" copy="نعرض صور الحافلات المتاحة لدينا، ونؤكد لك تفاصيل التجمع والانطلاق عند الحجز." /></div>
+              <div className="lg:col-span-5"><SectionIntro eyebrow="الطريق جزء من الرحلة" title="المواصلات من الرياض" copy="نعرض صور الحافلات المتاحة لدينا، ونؤكد لك تفاصيل التجمع والانطلاق عند الحجز." /></div>
               <dl className="grid divide-y divide-[var(--line)] border-y border-[var(--line)] lg:col-span-7">
                 {TRANSPORT_DETAILS.map((detail) => <div key={detail.label} className="flex items-center justify-between gap-5 py-3 text-sm"><dt className="font-bold">{detail.label}</dt><dd className="text-[var(--ink-soft)]">{detail.value}</dd></div>)}
               </dl>
             </div>
             <div className="mt-10 grid grid-cols-2 gap-3 md:grid-cols-5">
               {TRANSPORT_GALLERY.map((item, index) => (
-                <figure key={item.alt} className={`overflow-hidden rounded-2xl bg-[var(--paper-deep)] ${index === 0 ? "col-span-2 row-span-2" : ""}`}>
+                <figure key={item.alt} className={`image-breathe overflow-hidden rounded-2xl bg-[var(--paper-deep)] ${index === 0 ? "col-span-2 row-span-2" : ""}`}>
                   <img src={item.image} alt={item.alt} loading="lazy" className="h-full min-h-36 w-full object-cover" />
                 </figure>
               ))}
@@ -336,7 +366,7 @@ export default function Home() {
 
         <section id="faq" className="section-shell page-container">
           <div className="grid gap-10 lg:grid-cols-12">
-            <div className="lg:col-span-4"><SectionIntro eyebrow="إجابات قبل التواصل" title="الأسئلة الشائعة" copy="إن لم تجد إجابتك هنا، أرسل لنا استفسارك وسنوضح لك التفاصيل المتاحة." /></div>
+            <div className="lg:col-span-4"><SectionIntro eyebrow="إجابات قبل التواصل" title="الأسئلة الشائعة عن رحلات العمرة" copy="إن لم تجد إجابتك هنا، أرسل لنا استفسارك وسنوضح لك التفاصيل المتاحة." /></div>
             <div className="divide-y divide-[var(--line)] border-y border-[var(--line)] lg:col-span-8">
               {FAQS.map((faq) => (
                 <details key={faq.question} className="group py-1">
