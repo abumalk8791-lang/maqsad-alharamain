@@ -11,7 +11,7 @@ export default function Hero() {
       <img
         src={ASSETS.heroMakkah}
         alt="المسجد الحرام في مكة المكرمة ضمن رحلة عمرة من الرياض"
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 w-full h-full object-cover hero-bg-pan"
         fetchPriority="high"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/45 to-[var(--emerald-deep)]/90" />
