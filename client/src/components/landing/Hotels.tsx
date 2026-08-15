@@ -41,6 +41,13 @@ const HOTELS = [
     image: ASSETS.hotel5,
     tag: "٥ نجوم",
   },
+  {
+    name: "فندق العليان الذهبي",
+    location: "شارع إبراهيم الخليل – مكة المكرمة",
+    features: ["فندق ضمن خيارات الإقامة المتاحة", "تصنيف الفندق: ٤ نجوم", "نؤكد التوفر وتفاصيل الإقامة عند الاستفسار"],
+    image: ASSETS.hotel6,
+    tag: "٤ نجوم",
+  },
 ];
 
 export default function Hotels() {
