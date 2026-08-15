@@ -53,27 +53,3 @@ img { display: block; max-width: 100%; }
 @media (prefers-reduced-motion: no-preference) {
   a, button { transition: color .18s ease, background-color .18s ease, border-color .18s ease, transform .18s ease, opacity .18s ease; }
 }
-
-.page-title { font-size: clamp(2.35rem, 5vw, 4.5rem); line-height: 1.12; letter-spacing: -.045em; font-weight: 700; }
-.on-dark .eyebrow { color: var(--gold-wash); }
-.on-dark .section-copy { color: rgba(255, 255, 255, .7); }
-
-@media (prefers-reduced-motion: no-preference) {
-  .reveal-card { transition: transform .22s cubic-bezier(.23, 1, .32, 1), box-shadow .22s cubic-bezier(.23, 1, .32, 1); }
-  .reveal-card:hover { transform: translateY(-.35rem); box-shadow: 0 1.1rem 2.5rem rgba(24, 53, 46, .10); }
-  .image-breathe img { transition: transform 1.1s cubic-bezier(.23, 1, .32, 1); }
-  .image-breathe:hover img { transform: scale(1.035); }
-  .hero-image img { animation: hero-settle 900ms cubic-bezier(.23, 1, .32, 1) both; }
-  @keyframes hero-settle { from { opacity: .72; transform: scale(1.025); } to { opacity: 1; transform: scale(1); } }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  @supports (animation-timeline: view()) {
-    .timeline-step { animation: timeline-reveal linear both; animation-timeline: view(); animation-range: entry 8% cover 36%; }
-    @keyframes timeline-reveal { from { opacity: .35; transform: translateY(.8rem); } to { opacity: 1; transform: translateY(0); } }
-  }
-}
