@@ -34,6 +34,13 @@ const HOTELS = [
     image: ASSETS.hotel4,
     tag: "٤ نجوم",
   },
+  {
+    name: "فندق فوكو",
+    location: "إبراهيم الخليل – مكة المكرمة",
+    features: ["فندق ضمن خيارات الإقامة المتاحة", "تصنيف الفندق: ٥ نجوم", "نؤكد التوفر وتفاصيل الإقامة عند الاستفسار"],
+    image: ASSETS.hotel5,
+    tag: "٥ نجوم",
+  },
 ];
 
 export default function Hotels() {
