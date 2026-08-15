@@ -17,17 +17,17 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/45 to-[var(--emerald-deep)]/90" />
 
       <div className="relative z-10 container text-center pt-28 pb-40">
-        <p className="kicker justify-center !text-[var(--gold-soft)]">عمرة من الرياض • مكة والمدينة حسب البرنامج • إقامة ونقل</p>
-        <h1 className="mt-6 text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight [text-shadow:0_2px_24px_rgba(0,0,0,0.5)]">
+        <p className="kicker justify-center !text-[var(--gold-soft)] hero-copy-enter hero-copy-delay-1">عمرة من الرياض • مكة والمدينة حسب البرنامج • إقامة ونقل</p>
+        <h1 className="mt-6 text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight [text-shadow:0_2px_24px_rgba(0,0,0,0.5)] hero-copy-enter hero-copy-delay-2">
           عمرة من الرياض إلى مكة والمدينة
           <br />
           <span className="text-[var(--gold-soft)]">إقامة فندقية ونقل بالحافلات</span>
         </h1>
-        <p className="mt-6 text-lg md:text-2xl text-white/90 font-light max-w-3xl mx-auto leading-relaxed">
+        <p className="mt-6 text-lg md:text-2xl text-white/90 font-light max-w-3xl mx-auto leading-relaxed hero-copy-enter hero-copy-delay-3">
           نرتب رحلة العمرة من الرياض بوضوح: نراجع معك الوجهة والمدة والسكن والنقل، ثم نؤكد الموعد والسعر المتاحين قبل الحجز.
         </p>
 
-        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 hero-copy-enter hero-copy-delay-4">
           <a
             href={waLink("السلام عليكم، أرغب في معرفة رحلات العمرة المتاحة من الرياض إلى مكة والمدينة لدى مقصد الحرمين.")}
             target="_blank"
