@@ -23,6 +23,8 @@ import img_luxury_hotel_13_9d10c713 from "@/assets/luxury-hotel-13_9d10c713.webp
 import img_muna_concord_aziziyah from "@/assets/muna-concord-aziziyah.webp";
 import img_voco_ibrahim_khalil from "@/assets/voco-ibrahim-khalil.jpg";
 import img_alyan_al_dhahabi from "@/assets/alyan-al-dhahabi-ibrahim-khalil.jpg";
+import img_holiday_inn_aziziyah from "@/assets/holiday-inn-aziziyah.jfif";
+import img_qasr_rizq_ibrahim_khalil from "@/assets/qasr-rizq-ibrahim-khalil.webp";
 
 /**
  * مقصد الحرمين — ثوابت الهوية والتواصل
@@ -63,6 +65,8 @@ export const ASSETS = {
   hotel4: img_muna_concord_aziziyah,
   hotel5: img_voco_ibrahim_khalil,
   hotel6: img_alyan_al_dhahabi,
+  hotel7: img_holiday_inn_aziziyah,
+  hotel8: img_qasr_rizq_ibrahim_khalil,
   
   // صور الباصات النهائية (روابط مباشرة)
   bus1: `${GITHUB_RAW_BASE}/b1.webp`,
