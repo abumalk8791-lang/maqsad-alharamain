@@ -131,12 +131,13 @@
   }
   @media (prefers-reduced-motion: no-preference) {
     #root::before {
-      animation: site-gold-gradient-drift 24s cubic-bezier(0.45, 0, 0.55, 1) infinite alternate;
+      animation: site-gold-gradient-drift 40s linear infinite;
     }
   }
+  /* دورة كاملة تحفظ نقطة البداية عند التكرار، لذلك لا يظهر توقف أو قفزة */
   @keyframes site-gold-gradient-drift {
     from { transform: translate3d(-6%, -4%, 0) rotate(-3deg); }
-    to { transform: translate3d(6%, 4%, 0) rotate(3deg); }
+    to { transform: translate3d(-6%, -4%, 0) rotate(357deg); }
   }
   h1, h2, h3, h4 {
     line-height: 1.4;
