@@ -41,7 +41,7 @@ export const PHONE_DISPLAY = {
 };
 
 export const WHATSAPP_MESSAGE =
-  "السلام عليكم، أرغب في الاستفسار عن برامج العمرة المتاحة لدى مقصد الحرمين.";
+  "السلام عليكم ورحمة الله وبركاته، أود الاستفسار عن برامج العمرة والزيارة المتاحة من الرياض لدى مقصد الحرمين. أرجو تزويدي بالوجهات والمدد المتاحة وخيارات الإقامة والنقل والسعر الحالي وطريقة الحجز. وشكراً لكم.";
 
 export function waLink(customMessage?: string): string {
   const msg = encodeURIComponent(customMessage ?? WHATSAPP_MESSAGE);
